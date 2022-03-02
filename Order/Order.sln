@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderUI", "OrderUI\OrderUI.csproj", "{27484338-58F6-49ED-82E7-D2783C62C8DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderLibrary", "OrderLibrary\OrderLibrary.csproj", "{B5E595A2-B20B-455A-AC0C-92120218B1DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{27484338-58F6-49ED-82E7-D2783C62C8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27484338-58F6-49ED-82E7-D2783C62C8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27484338-58F6-49ED-82E7-D2783C62C8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E595A2-B20B-455A-AC0C-92120218B1DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E595A2-B20B-455A-AC0C-92120218B1DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E595A2-B20B-455A-AC0C-92120218B1DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E595A2-B20B-455A-AC0C-92120218B1DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
