@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Order
+namespace OrderUI
 {
-    public partial class RegisterForm : Form
+    public partial class Form1 : Form
     {
-        public RegisterForm()
+        public Form1()
         {
             InitializeComponent();
         }
+
     }
 }
