@@ -1,0 +1,13 @@
+C:\Coding\OrderSystem\OrderSystemLibrary\bin\Debug\netcoreapp3.1\OrderSystemLibrary.deps.json
+C:\Coding\OrderSystem\OrderSystemLibrary\bin\Debug\netcoreapp3.1\OrderSystemLibrary.runtimeconfig.json
+C:\Coding\OrderSystem\OrderSystemLibrary\bin\Debug\netcoreapp3.1\OrderSystemLibrary.runtimeconfig.dev.json
+C:\Coding\OrderSystem\OrderSystemLibrary\bin\Debug\netcoreapp3.1\OrderSystemLibrary.dll
+C:\Coding\OrderSystem\OrderSystemLibrary\bin\Debug\netcoreapp3.1\OrderSystemLibrary.pdb
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.csproj.AssemblyReference.cache
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.AssemblyInfoInputs.cache
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.AssemblyInfo.cs
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.csproj.CoreCompileInputs.cache
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.dll
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.pdb
+C:\Coding\OrderSystem\OrderSystemLibrary\obj\Debug\netcoreapp3.1\OrderSystemLibrary.genruntimeconfig.cache
