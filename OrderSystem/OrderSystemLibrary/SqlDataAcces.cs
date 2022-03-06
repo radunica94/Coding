@@ -16,15 +16,15 @@ namespace OrderSystemLibrary
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into Register (FirstName, LastName, Email, Password, ConfirmPassword) VALUES(@FirstName, @LastName, @Email, @Password, @ConfirmPassword)", user);
+                cnn.Execute("insert into Register (FirstName, LastName, Email, Password, ConfirmPassword) VALUES(@FirstName, @LastName, @Email, @Password, @ConfirmPassword)", user);               
             }
         }
         public static bool CheckEmail(UsersModel u)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<UsersModel>("select * from Register where Email = " + u.Email, new DynamicParameters());
-                return output.ToList().Any();       
+                var output = cnn.Query<UsersModel>("select Email from Register"  , new DynamicParameters());
+                return output.ToList().Any();
             }
         }
 

@@ -41,6 +41,7 @@ namespace OrderSystemUI
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.exitButton = new System.Windows.Forms.Button();
+            this.checkEmailButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,12 +149,22 @@ namespace OrderSystemUI
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // checkEmailButton
+            // 
+            this.checkEmailButton.Location = new System.Drawing.Point(377, 215);
+            this.checkEmailButton.Name = "checkEmailButton";
+            this.checkEmailButton.Size = new System.Drawing.Size(35, 35);
+            this.checkEmailButton.TabIndex = 9;
+            this.checkEmailButton.UseVisualStyleBackColor = true;
+            this.checkEmailButton.Click += new System.EventHandler(this.checkEmailButton_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(436, 600);
+            this.Controls.Add(this.checkEmailButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label2);
@@ -185,5 +196,6 @@ namespace OrderSystemUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button checkEmailButton;
     }
 }

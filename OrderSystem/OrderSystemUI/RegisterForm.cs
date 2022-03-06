@@ -16,9 +16,9 @@ namespace OrderSystemUI
         public RegisterForm()
         {
             InitializeComponent();
+            
         }
        
-
         private void registerButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -31,29 +31,21 @@ namespace OrderSystemUI
                 u.Password = passwordTextBox.Text;
                 u.ConfirmPassword = confirmPasswordTextBox.Text;
 
-                if(SqlDataAcces.CheckEmail(u))
+                if (passwordTextBox.Text != confirmPasswordTextBox.Text)
                 {
-                    MessageBox.Show("Email exists");
+                    MessageBox.Show("The password confirmation does not match");
 
                 }
                 else
                 {
-                    if (passwordTextBox.Text != confirmPasswordTextBox.Text)
-                    {
-                        MessageBox.Show("The password confirmation does not match");
+                    SqlDataAcces.SaveUser(u);
 
-                    }
-                    else
-                    {
-                        SqlDataAcces.SaveUser(u);
-
-                        firstNameTextBox.Text = "";
-                        lastNameTextBox.Text = "";
-                        emailTextBox.Text = "";
-                        passwordTextBox.Text = "";
-                        confirmPasswordTextBox.Text = "";
-                    }
-                }                                 
+                    firstNameTextBox.Text = "";
+                    lastNameTextBox.Text = "";
+                    emailTextBox.Text = "";
+                    passwordTextBox.Text = "";
+                    confirmPasswordTextBox.Text = "";
+                }                                            
             }            
         }
 
@@ -129,6 +121,22 @@ namespace OrderSystemUI
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkEmailButton_Click(object sender, EventArgs e)
+        {
+            UsersModel u = new UsersModel();
+
+            u.Email = emailTextBox.Text;
+
+            if (String.Equals(SqlDataAcces.CheckEmail(u),u.Email))
+            {
+                MessageBox.Show("Email exists");
+            }
+            else
+            {
+                MessageBox.Show("Email dose not exist");
+            }
         }
     }
 }
