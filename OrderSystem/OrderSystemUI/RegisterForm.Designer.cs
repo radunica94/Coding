@@ -48,7 +48,7 @@ namespace OrderSystemUI
             // firstNameTextBox
             // 
             this.firstNameTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.firstNameTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.firstNameTextBox.Location = new System.Drawing.Point(65, 140);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(150, 35);
@@ -59,7 +59,7 @@ namespace OrderSystemUI
             // lastNameTextBox
             // 
             this.lastNameTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.lastNameTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.lastNameTextBox.Location = new System.Drawing.Point(221, 140);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(150, 35);
@@ -70,7 +70,7 @@ namespace OrderSystemUI
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.passwordTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.passwordTextBox.Location = new System.Drawing.Point(65, 290);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(306, 35);
@@ -81,7 +81,7 @@ namespace OrderSystemUI
             // confirmPasswordTextBox
             // 
             this.confirmPasswordTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.confirmPasswordTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.confirmPasswordTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.confirmPasswordTextBox.Location = new System.Drawing.Point(65, 365);
             this.confirmPasswordTextBox.Name = "confirmPasswordTextBox";
             this.confirmPasswordTextBox.Size = new System.Drawing.Size(306, 35);
@@ -92,7 +92,7 @@ namespace OrderSystemUI
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emailTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.emailTextBox.ForeColor = System.Drawing.Color.DarkGray;
             this.emailTextBox.Location = new System.Drawing.Point(65, 215);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(306, 35);

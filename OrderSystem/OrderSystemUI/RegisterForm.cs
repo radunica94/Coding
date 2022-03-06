@@ -45,6 +45,11 @@ namespace OrderSystemUI
                     emailTextBox.Text = "";
                     passwordTextBox.Text = "";
                     confirmPasswordTextBox.Text = "";
+
+                    ClientMainForm clientForm = new ClientMainForm();
+                    this.Hide();
+                    clientForm.ShowDialog();
+                    this.Close();
                 }                                            
             }            
         }

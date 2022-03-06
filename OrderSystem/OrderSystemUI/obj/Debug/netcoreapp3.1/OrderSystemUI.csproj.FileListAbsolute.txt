@@ -50,3 +50,8 @@ C:\Coding\OrderSystem\OrderSystemUI\bin\Debug\netcoreapp3.1\OrderSystemLibrary.d
 C:\Coding\OrderSystem\OrderSystemUI\bin\Debug\netcoreapp3.1\OrderSystemLibrary.pdb
 C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.RegisterForm.resources
 C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.Properties.Resources.resources
+C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.ClientMainForm.resources
+C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.LoginForm.resources
+C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.AdminMainForm.resources
+C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.EmployeeLoginForm.resources
+C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.EmployeeMainAdmin.resources

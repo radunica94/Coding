@@ -23,7 +23,15 @@ namespace OrderSystemLibrary
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<UsersModel>("select Email from Register"  , new DynamicParameters());
+                var output = cnn.Query<UsersModel>("select * from Register WHERE Email = '" + u.Email +  "'", new DynamicParameters());
+                return output.ToList().Any();
+            }
+        }
+        public static bool LoginUser(UsersModel user)
+        {
+            using(IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<UsersModel>("SELECT * from Register WHERE  Email = '" + user.Email + "' AND Password = '" + user.Password + "'", new DynamicParameters());
                 return output.ToList().Any();
             }
         }

@@ -17,7 +17,7 @@ namespace OrderSystemUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegisterForm());
+            Application.Run(new LoginForm());
         }
     }
 }

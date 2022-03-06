@@ -4,6 +4,21 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ClientMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EmployeeLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EmployeeMainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
