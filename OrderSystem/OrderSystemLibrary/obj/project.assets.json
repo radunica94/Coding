@@ -1254,7 +1254,8 @@
     ".NETCoreApp,Version=v3.1": [
       "Dapper >= 2.0.123",
       "System.Configuration.ConfigurationManager >= 6.0.0",
-      "System.Data.SQLite >= 1.0.115.5"
+      "System.Data.SQLite >= 1.0.115.5",
+      "System.Windows.Extensions >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -1312,6 +1313,10 @@
           "System.Data.SQLite": {
             "target": "Package",
             "version": "[1.0.115.5, )"
+          },
+          "System.Windows.Extensions": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         },
         "imports": [

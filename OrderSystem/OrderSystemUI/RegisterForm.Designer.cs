@@ -29,6 +29,7 @@ namespace OrderSystemUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.firstNameTextBox = new System.Windows.Forms.RichTextBox();
             this.lastNameTextBox = new System.Windows.Forms.RichTextBox();
             this.passwordTextBox = new System.Windows.Forms.RichTextBox();
@@ -37,6 +38,9 @@ namespace OrderSystemUI
             this.registerButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.exitButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameTextBox
@@ -48,6 +52,7 @@ namespace OrderSystemUI
             this.firstNameTextBox.Size = new System.Drawing.Size(150, 35);
             this.firstNameTextBox.TabIndex = 0;
             this.firstNameTextBox.Text = "First Name";
+            this.firstNameTextBox.Click += new System.EventHandler(this.firstNameTextBox_Click);
             // 
             // lastNameTextBox
             // 
@@ -58,6 +63,7 @@ namespace OrderSystemUI
             this.lastNameTextBox.Size = new System.Drawing.Size(150, 35);
             this.lastNameTextBox.TabIndex = 1;
             this.lastNameTextBox.Text = "Last Name";
+            this.lastNameTextBox.Click += new System.EventHandler(this.lastNameTextBox_Click);
             // 
             // passwordTextBox
             // 
@@ -68,6 +74,7 @@ namespace OrderSystemUI
             this.passwordTextBox.Size = new System.Drawing.Size(306, 35);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.Text = "Password";
+            this.passwordTextBox.Click += new System.EventHandler(this.passwordTextBox_Click);
             // 
             // confirmPasswordTextBox
             // 
@@ -78,6 +85,7 @@ namespace OrderSystemUI
             this.confirmPasswordTextBox.Size = new System.Drawing.Size(306, 35);
             this.confirmPasswordTextBox.TabIndex = 3;
             this.confirmPasswordTextBox.Text = "Confirm Password";
+            this.confirmPasswordTextBox.Click += new System.EventHandler(this.confirmPasswordTextBox_Click);
             // 
             // emailTextBox
             // 
@@ -88,6 +96,8 @@ namespace OrderSystemUI
             this.emailTextBox.Size = new System.Drawing.Size(306, 35);
             this.emailTextBox.TabIndex = 4;
             this.emailTextBox.Text = "Email";
+            this.emailTextBox.Click += new System.EventHandler(this.emailTextBox_Click);
+            this.emailTextBox.Leave += new System.EventHandler(this.emailTextBox_Leave);
             // 
             // registerButton
             // 
@@ -123,12 +133,25 @@ namespace OrderSystemUI
             this.label2.TabIndex = 7;
             this.label2.Text = "Register";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(387, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(37, 34);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.UseVisualStyleBackColor = true;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(436, 600);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -141,6 +164,7 @@ namespace OrderSystemUI
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +180,7 @@ namespace OrderSystemUI
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button exitButton;
     }
 }
