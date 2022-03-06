@@ -30,6 +30,7 @@ namespace OrderSystemUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.firstNameTextBox = new System.Windows.Forms.RichTextBox();
             this.lastNameTextBox = new System.Windows.Forms.RichTextBox();
             this.passwordTextBox = new System.Windows.Forms.RichTextBox();
@@ -139,11 +140,13 @@ namespace OrderSystemUI
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(387, 12);
+            this.exitButton.Image = ((System.Drawing.Image)(resources.GetObject("exitButton.Image")));
+            this.exitButton.Location = new System.Drawing.Point(394, 12);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(37, 34);
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
             this.exitButton.TabIndex = 8;
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // RegisterForm
             // 

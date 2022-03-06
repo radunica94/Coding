@@ -49,3 +49,4 @@ C:\Coding\OrderSystem\OrderSystemUI\bin\Debug\netcoreapp3.1\runtimes\win\lib\net
 C:\Coding\OrderSystem\OrderSystemUI\bin\Debug\netcoreapp3.1\OrderSystemLibrary.dll
 C:\Coding\OrderSystem\OrderSystemUI\bin\Debug\netcoreapp3.1\OrderSystemLibrary.pdb
 C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.RegisterForm.resources
+C:\Coding\OrderSystem\OrderSystemUI\obj\Debug\netcoreapp3.1\OrderSystemUI.Properties.Resources.resources
