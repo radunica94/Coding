@@ -34,12 +34,17 @@ namespace Regasirea_Informatiei
                 {
                     Console.WriteLine(text.InnerText);
                 }
-                XmlNode topics = node.SelectSingleNode("//codes[@class='bip:topics:1.0'][1]/@class");
-                if(topics != null)
+                XmlNode firstCodeTopic = node.SelectSingleNode("//codes[@class='bip:topics:1.0'][1]/code[1]/@code");
+                if(firstCodeTopic != null)
                 {
-                    Console.WriteLine(topics.InnerText);
+                    Console.WriteLine(firstCodeTopic.InnerText);
                 }
-                
+                XmlNode secondCodeTopic = node.SelectSingleNode("//codes[@class='bip:topics:1.0'][1]/code[2]/@code");
+                if (secondCodeTopic != null)
+                {
+                    Console.WriteLine(secondCodeTopic.InnerText);
+                }
+
             }            
 
         }       
