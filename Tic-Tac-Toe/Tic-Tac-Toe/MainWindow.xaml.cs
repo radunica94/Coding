@@ -20,6 +20,7 @@ namespace Tic_Tac_Toe
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
+    //TODO - comentarii
     public partial class MainWindow : Window
     {
         private readonly Dictionary<Player, ImageSource> imageSources = new()
@@ -34,7 +35,6 @@ namespace Tic_Tac_Toe
             { Player.O, new ObjectAnimationUsingKeyFrames() }
         };
 
-        //
         private readonly DoubleAnimation fadeOutAnimation = new DoubleAnimation
         {
             Duration = TimeSpan.FromSeconds(.5),
