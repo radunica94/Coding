@@ -11,6 +11,7 @@ namespace Regasirea_Informatiei
     /// - Titlu
     /// - paragrafele
     /// - cod topics
+    /// http://xpather.com/ -- link 
     /// </summary>
     class Program
     {
