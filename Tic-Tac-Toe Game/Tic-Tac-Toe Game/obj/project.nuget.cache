@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "x3MVa+aLIATUqLVQ4unp04GlZB0qsAPf5JyrTtNX0qfHxtkgvmO1TKDQl78hk4l+dBrVAk6lBZuJ4Yont6YosA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\radun\\source\\repos\\Tic-Tac-Toe Game\\Tic-Tac-Toe Game\\Tic-Tac-Toe Game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\radun\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
