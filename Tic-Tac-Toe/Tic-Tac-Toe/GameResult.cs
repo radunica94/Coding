@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tic_Tac_Toe
 {
-    class GameResult
+    public class GameResult
     {
+        public Player Winner { get; set; }
+        public WinInfo WinInfo { get; set; }
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Tic_Tac_Toe
 {
-    class Player
+    /// <summary>
+    /// enum - clasa care reprezinta un grup de constante
+    /// variabile neschimbate, doar citite.
+    /// </summary>
+    public enum Player
     {
+        None, X, O
     }
 }
