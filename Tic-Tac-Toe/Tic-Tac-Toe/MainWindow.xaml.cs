@@ -20,7 +20,6 @@ namespace Tic_Tac_Toe
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    //TODO - comentarii
     public partial class MainWindow : Window
     {
         private readonly Dictionary<Player, ImageSource> imageSources = new()
