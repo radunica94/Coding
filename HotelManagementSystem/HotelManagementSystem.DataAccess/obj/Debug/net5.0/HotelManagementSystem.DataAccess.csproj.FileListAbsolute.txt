@@ -1,0 +1,13 @@
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\bin\Debug\net5.0\HotelManagementSystem.DataAccess.deps.json
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\bin\Debug\net5.0\HotelManagementSystem.DataAccess.dll
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\bin\Debug\net5.0\ref\HotelManagementSystem.DataAccess.dll
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\bin\Debug\net5.0\HotelManagementSystem.DataAccess.pdb
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.csproj.AssemblyReference.cache
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.AssemblyInfoInputs.cache
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.AssemblyInfo.cs
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.csproj.CoreCompileInputs.cache
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.dll
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\ref\HotelManagementSystem.DataAccess.dll
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\obj\Debug\net5.0\HotelManagementSystem.DataAccess.pdb
+C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\bin\Debug\net5.0\HotelManagementSystem.DataAccess.dll.config
