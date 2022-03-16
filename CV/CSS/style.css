@@ -1,0 +1,32 @@
+table{    
+    width: 100%;    
+}
+.poza{
+      text-align: right;
+}
+
+.limbistr{
+    border:solid 1px #f50808;
+    border-collapse: collapse;    
+}
+
+.limbistr td {
+    border:solid 1px #f50808;
+    text-align: center;
+}
+.tableHead{
+    color:#191970;
+    font-size: 35px;
+    font-weight: bolder;
+    padding-left: 10px; 
+}
+.title{
+    color:#000080;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 5px;   
+    border-bottom: #0000CD solid 2px; 
+}
+
+  
+ 
