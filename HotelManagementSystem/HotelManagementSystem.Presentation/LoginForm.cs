@@ -34,7 +34,7 @@ namespace HotelManagementSystem.Presentation
 
                 dt = userOp.Login(users);
 
-                userType = dt.Rows[0][7].ToString();
+                userType = dt.Rows[0][6].ToString();
                 if (userType == "admin")
                 {
                     this.Hide();

@@ -32,3 +32,4 @@ C:\Coding\HotelManagementSystem\HotelManagementSystem.Presentation\bin\Debug\net
 C:\Coding\HotelManagementSystem\HotelManagementSystem.Presentation\obj\Debug\net5.0-windows\HotelManagementSystem.Presentation.AdminMainForm.resources
 C:\Coding\HotelManagementSystem\HotelManagementSystem.Presentation\obj\Debug\net5.0-windows\HotelManagementSystem.Presentation.csproj.CopyComplete
 C:\Coding\HotelManagementSystem\HotelManagementSystem.Presentation\obj\Debug\net5.0-windows\HotelManagementSystem.Presentation.EmployeeMainForm.resources
+C:\Coding\HotelManagementSystem\HotelManagementSystem.Presentation\obj\Debug\net5.0-windows\HotelManagementSystem.Presentation.AddEmployeeForm.resources

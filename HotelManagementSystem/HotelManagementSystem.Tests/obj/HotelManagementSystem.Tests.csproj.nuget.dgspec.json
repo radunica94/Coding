@@ -235,6 +235,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.17.2, )"
+            },
             "xunit": {
               "target": "Package",
               "version": "[2.4.1, )"

@@ -10,10 +10,10 @@ using HotelManagementSystem.Models;
 
 namespace HotelManagementSystem.Business
 {
-    public class UserOperations
+    public class UserOperations : IUserOperations
     {
         public HotelManagementSystemDB db = new HotelManagementSystemDB();
-        public UserModel user = new UserModel();
+        private readonly IUserOperations users;
 
         public DataTable Login(UserModel users)
         {
@@ -29,5 +29,5 @@ namespace HotelManagementSystem.Business
             cmd.CommandText = "INSERT INTO Register VALUES('" + users.firstName + "','" + users.lastName + "','" + users.email + "','" + users.username + "','" + users.password + "','" + users.userType + "','" + "')";
             return db.ExeNonQuery(cmd);
         }
-    }   
+    }
 }

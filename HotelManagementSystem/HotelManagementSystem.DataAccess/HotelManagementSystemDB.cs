@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementSystem.DataAccess
 {
-    public class HotelManagementSystemDB
+    public class HotelManagementSystemDB : IHotelManagementSystemDB
     {
         public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\HotelManagementSystem.DB.mdf;Integrated Security=True");
         private SqlDataAdapter myAdapter;

@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using HotelManagementSystem.Business;
 using HotelManagementSystem.Models;
+using Moq;
 using Xunit;
 
 namespace HotelManagementSystem.Tests
 {
     public class LoginTest
-    {
+    {        
         [Fact]
         public void Login_IfWorks()
         {
@@ -19,11 +20,13 @@ namespace HotelManagementSystem.Tests
 
             UserModel users = new UserModel(username, password);
 
-            UserOperations userOp = new UserOperations();
+            //var login = new Mock<IUserOperations>();
+           // login.Setup(x => x.Login(users)).RetursAsync
 
-            UserModel user = userOp.Login(users);
-            
-            Assert.Equal(user.username,username);
-        }
+
+            //var calculator = new Mock<ICalculator>();
+            //calculator.Setup(x => x.Add(2, 2)).Returns(4);
+            //Assert.Equal(4, calculator.Object.Add(2, 2));
+        }        
     }
 }
