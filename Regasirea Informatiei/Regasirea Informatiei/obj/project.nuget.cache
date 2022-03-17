@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VSUlZkEnAPjbBs8/PpHdVKf1HtdRBDK7eTmKotmJKNUmj+10cmUrVZIb0ZYqa+wsu6DnszCnhzDwnitLFlV7dQ==",
+  "dgSpecHash": "IWIjtskmK6LdHBEb5cUe4+tb+VS20l0deJV8veU9Ij4gm8k/J8Jrv8ALkUUQ4cBrqifRUZtbkkutBCDVnJKZKg==",
   "success": true,
   "projectFilePath": "C:\\Coding\\Regasirea Informatiei\\Regasirea Informatiei\\Regasirea Informatiei.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\radun\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
