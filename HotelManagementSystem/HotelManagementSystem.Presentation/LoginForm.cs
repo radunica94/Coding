@@ -22,28 +22,62 @@ namespace HotelManagementSystem.Presentation
         public LoginForm()
         {
             InitializeComponent();
+            passwordTextBox.PasswordChar = '*';           
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            users.username = usernameTextBox.Text;
-            users.password = passwordTextBox.Text;
-
-            dt = userOp.Login(users);
-
-            userType = dt.Rows[0][7].ToString();
-            if (userType == "admin")
+            if (ValidateForm())
             {
-                this.Hide();
-                AdminMainForm admin = new AdminMainForm();
-                admin.Show();
+                users.username = usernameTextBox.Text;
+                users.password = passwordTextBox.Text;
+
+                dt = userOp.Login(users);
+
+                userType = dt.Rows[0][7].ToString();
+                if (userType == "admin")
+                {
+                    this.Hide();
+                    AdminMainForm admin = new AdminMainForm();
+                    admin.Show();
+                    usernameTextBox.Text = "";
+                    passwordTextBox.Text = "";
+
+                }
+                else if (userType == "employee")
+                {
+                    this.Hide();
+                    EmployeeMainForm employee = new EmployeeMainForm();
+                    employee.Show();
+                    usernameTextBox.Text = "";
+                    passwordTextBox.Text = "";
+
+                }
+                else
+                {
+                    MessageBox.Show("invalid username or password!");
+                }
             }
-            //employee form
             else
             {
-                MessageBox.Show("invalid username or password!");
+                MessageBox.Show("You need to fill in all the fields! ");
             }
             
+        }
+       
+        
+
+        private bool ValidateForm()
+        {
+            if (usernameTextBox.Text.Length == 0)
+            {                
+                return false;
+            }
+            if (passwordTextBox.Text.Length == 0)
+            {               
+                return false;
+            }
+            return true;
         }
     }
 }

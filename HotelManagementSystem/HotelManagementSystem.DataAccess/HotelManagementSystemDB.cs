@@ -42,5 +42,14 @@ namespace HotelManagementSystem.DataAccess
             conn.Close();
             return dt;
         }
+
+        public int ExeNonQuery(SqlCommand cmd)
+        {
+            cmd.Connection = getcon();
+            int rowsaffected = -1;
+            rowsaffected = cmd.ExecuteNonQuery();
+            conn.Close();
+            return rowsaffected;
+        }
     }
 }

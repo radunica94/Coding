@@ -13,8 +13,17 @@ namespace HotelManagementSystem.Models
         public string lastName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public string confirmPassword { get; set; }
         public string username { get; set; }
         public string userType { get; set; }
+
+        public UserModel (string userName,string passWord)
+        {
+            username = userName;
+            password = passWord;
+        }
+        public UserModel()
+        {
+
+        }
     }
 }

@@ -14,15 +14,15 @@ namespace HotelManagementSystem.Tests
         [Fact]
         public void Login_IfWorks()
         {
-            // Arrange
             string username = "admin";
-            string password = "password";
+            string password = "admin";
 
-            // Act
+            UserModel users = new UserModel(username, password);
+
             UserOperations userOp = new UserOperations();
 
-            UserModel user = userOp.Login(username);
-            //Assert
+            UserModel user = userOp.Login(users);
+            
             Assert.Equal(user.username,username);
         }
     }

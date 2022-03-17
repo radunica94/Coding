@@ -29,12 +29,32 @@ namespace HotelManagementSystem.Presentation
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.addEmployeeButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // addEmployeeButton
+            // 
+            this.addEmployeeButton.Location = new System.Drawing.Point(62, 73);
+            this.addEmployeeButton.Name = "addEmployeeButton";
+            this.addEmployeeButton.Size = new System.Drawing.Size(194, 34);
+            this.addEmployeeButton.TabIndex = 0;
+            this.addEmployeeButton.Text = "Add Employee";
+            this.addEmployeeButton.UseVisualStyleBackColor = true;
+            // 
+            // AdminMainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(959, 557);
+            this.Controls.Add(this.addEmployeeButton);
+            this.Name = "AdminMainForm";
             this.Text = "AdminMainForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button addEmployeeButton;
     }
 }

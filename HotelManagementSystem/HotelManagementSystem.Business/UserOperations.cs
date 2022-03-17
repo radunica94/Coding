@@ -22,6 +22,12 @@ namespace HotelManagementSystem.Business
             cmd.CommandText = "select * from Register where username = '" + users.username + "' and password = '" + users.password + "'";
             return db.ExeReader(cmd);
         }
-
-    }
+        public int InsertEmployee(UserModel users)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO Register VALUES('" + users.firstName + "','" + users.lastName + "','" + users.email + "','" + users.username + "','" + users.password + "','" + users.userType + "','" + "')";
+            return db.ExeNonQuery(cmd);
+        }
+    }   
 }
