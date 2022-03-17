@@ -10,7 +10,7 @@ namespace HotelManagementSystem.DataAccess
 {
     public class HotelManagementSystemDB
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\HotelManagementSystem.DB;Integrated Security=True");
+        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Coding\HotelManagementSystem\HotelManagementSystem.DataAccess\HotelManagementSystem.DB.mdf;Integrated Security=True");
         private SqlDataAdapter myAdapter;
 
         /// <summary>
