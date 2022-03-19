@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -22,32 +24,29 @@ namespace Regasirea_Informatiei
 
             XmlNodeList nodes = xmlDoc.SelectNodes("//newsitem");            
 
-
             foreach (XmlNode node in nodes)
             {
                 XmlNode title = node.SelectSingleNode("//title[1]/text()[1]");
                 if (title != null)
                 {
-                    Console.WriteLine(title.InnerText);
+                   //Console.WriteLine(title.InnerText);
                 }
                 XmlNode text = node.SelectSingleNode("//text[1]");
                 if(text != null)
                 {
-                    Console.WriteLine(text.InnerText);
+                    Console.WriteLine(text.InnerText.ToLower());
                 }
                 XmlNode firstCodeTopic = node.SelectSingleNode("//codes[@class='bip:topics:1.0'][1]/code[1]/@code");
                 if(firstCodeTopic != null)
                 {
-                    Console.WriteLine(firstCodeTopic.InnerText);
+                    //Console.WriteLine(firstCodeTopic.InnerText);
                 }
                 XmlNode secondCodeTopic = node.SelectSingleNode("//codes[@class='bip:topics:1.0'][1]/code[2]/@code");
                 if (secondCodeTopic != null)
                 {
-                    Console.WriteLine(secondCodeTopic.InnerText);
-                }
-
-            }            
-
+                    //Console.WriteLine(secondCodeTopic.InnerText);
+                }                
+            }
         }       
     }
 }
