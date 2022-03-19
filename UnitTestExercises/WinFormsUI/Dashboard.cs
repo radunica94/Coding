@@ -15,6 +15,7 @@ namespace WinFormUI
     public partial class Dashboard : Form
     {
         List<PersonModel> people;
+        ICalculator _calc;
         public Dashboard()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace WinFormUI
             usersDropdown.DataSource = null;
             usersDropdown.DataSource = people;
             usersDropdown.DisplayMember = "FullName";
+            _calc = new Calculator();
         }
 
         private void addPersonButton_Click(object sender, EventArgs e)
@@ -40,30 +42,30 @@ namespace WinFormUI
             RebindDropdown();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        public void addButton_Click(object sender, EventArgs e)
         {
-            resultsText.Text = Calculator.Add((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
+            resultsText.Text = _calc.Add((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
             firstNumberValue.Value = 0;
             secondNumberValue.Value = 0;
         }
 
         private void subtractButton_Click(object sender, EventArgs e)
         {
-            resultsText.Text = Calculator.Subtract((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
+            resultsText.Text = _calc.Subtract((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
             firstNumberValue.Value = 0;
             secondNumberValue.Value = 0;
         }
 
         private void multiplyButton_Click(object sender, EventArgs e)
         {
-            resultsText.Text = Calculator.Multiply((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
+            resultsText.Text = _calc.Multiply((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
             firstNumberValue.Value = 0;
             secondNumberValue.Value = 0;
         }
 
         private void divideButton_Click(object sender, EventArgs e)
         {
-            resultsText.Text = Calculator.Divide((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
+            resultsText.Text = _calc.Divide((double)firstNumberValue.Value, (double)secondNumberValue.Value).ToString();
             firstNumberValue.Value = 0;
             secondNumberValue.Value = 0;
         }
