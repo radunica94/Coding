@@ -4780,11 +4780,6 @@
     "net5.0": [
       "UnitTestExercises >= 1.0.0",
       "xunit >= 2.4.1",
-      "xunit.analyzers >= 0.10.0",
-      "xunit.assert >= 2.4.1",
-      "xunit.core >= 2.4.1",
-      "xunit.extensibility.core >= 2.4.1",
-      "xunit.extensibility.execution >= 2.4.1",
       "xunit.runner.console >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
@@ -4838,26 +4833,6 @@
         "targetAlias": "net5.0",
         "dependencies": {
           "xunit": {
-            "target": "Package",
-            "version": "[2.4.1, )"
-          },
-          "xunit.analyzers": {
-            "target": "Package",
-            "version": "[0.10.0, )"
-          },
-          "xunit.assert": {
-            "target": "Package",
-            "version": "[2.4.1, )"
-          },
-          "xunit.core": {
-            "target": "Package",
-            "version": "[2.4.1, )"
-          },
-          "xunit.extensibility.core": {
-            "target": "Package",
-            "version": "[2.4.1, )"
-          },
-          "xunit.extensibility.execution": {
             "target": "Package",
             "version": "[2.4.1, )"
           },

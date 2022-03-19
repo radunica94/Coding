@@ -2,7 +2,6 @@ C:\Coding\UnitTestExercises\UnitTestExercises\bin\Debug\net5.0\UnitTestExercises
 C:\Coding\UnitTestExercises\UnitTestExercises\bin\Debug\net5.0\UnitTestExercises.dll
 C:\Coding\UnitTestExercises\UnitTestExercises\bin\Debug\net5.0\ref\UnitTestExercises.dll
 C:\Coding\UnitTestExercises\UnitTestExercises\bin\Debug\net5.0\UnitTestExercises.pdb
-C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.csproj.AssemblyReference.cache
 C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.GeneratedMSBuildEditorConfig.editorconfig
 C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.AssemblyInfoInputs.cache
 C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises
 C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.dll
 C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\ref\UnitTestExercises.dll
 C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.pdb
+C:\Coding\UnitTestExercises\UnitTestExercises\obj\Debug\net5.0\UnitTestExercises.csproj.AssemblyReference.cache
