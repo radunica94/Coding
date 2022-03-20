@@ -18,3 +18,4 @@ C:\Coding\UnitTestExercises\WinFormsUI\obj\Debug\net6.0-windows\refint\WinFormsU
 C:\Coding\UnitTestExercises\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.pdb
 C:\Coding\UnitTestExercises\WinFormsUI\obj\Debug\net6.0-windows\WinFormsUI.genruntimeconfig.cache
 C:\Coding\UnitTestExercises\WinFormsUI\obj\Debug\net6.0-windows\ref\WinFormsUI.dll
+C:\Coding\UnitTestExercises\WinFormsUI\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

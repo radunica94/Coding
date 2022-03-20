@@ -100,3 +100,6 @@ C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\obj\Debug\net6.0\refint\Uni
 C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\obj\Debug\net6.0\UnitTestExcercises.Tests.pdb
 C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\obj\Debug\net6.0\UnitTestExcercises.Tests.genruntimeconfig.cache
 C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\obj\Debug\net6.0\ref\UnitTestExcercises.Tests.dll
+C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\bin\Debug\net6.0\xunit.runner.json
+C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\bin\Debug\net6.0\UnitTestExcercises.Tests.dll.config
+C:\Coding\UnitTestExercises\UnitTestExcercises.Tests\bin\Debug\net6.0\App.config

@@ -10,6 +10,35 @@ namespace UnitTestExercises.Tests
 {
     public class CalculatorTests
     {
+        [Theory]
+        [InlineData(4,3,7)]
+        [InlineData(21,5.25,26.25)]
+        [InlineData(double.MaxValue,5,double.MaxValue)]
+        [InlineData(5,-5,0)]
+        public void AddTheory_SimpleValuesShouldCalculate(double x , double y, double expected)
+        {
+            Calculator calc = new Calculator();
+            double actual = calc.Add(x, y);
+            Assert.Equal(expected, actual); 
+        }
+
+        [Theory]
+        [InlineData(8, 4, 2)]
+        public void DivideTheory_SimpleValuesShouldCalculate(double x, double y, double expected)
+        {
+            Calculator calc = new Calculator();
+            double actual = calc.Divide(x, y);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Divide_DivideByZero()
+        {
+            Calculator calc = new Calculator();
+            double expected = 0;
+            double actual = calc.Divide(15,0);
+            Assert.Equal(expected, actual);
+        }
         [Fact]
         //Name convention: Method name '_' what the test shoud do
         public void Add_SimpleValuesShoudlCalculate()

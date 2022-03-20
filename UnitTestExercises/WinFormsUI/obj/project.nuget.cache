@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qbxeeomQYYs4OCWSpId3N234ljSi9QtzHevehs/k3uegbO/NVq0Z5ojBApdxPUe3voOOLBSuZI4YX9n93EQ9RQ==",
+  "dgSpecHash": "AVL7EgpUxAYBr91HMmhJJ+vu0jLLTokBczu/09h0K8IBgWmIp1bwEwui8Z9VZyc/t6TXRLgYVMyFKuqJWlGVqg==",
   "success": true,
   "projectFilePath": "C:\\Coding\\UnitTestExercises\\WinFormsUI\\WinFormsUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\radun\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
