@@ -1,5 +1,0 @@
-C:\Coding\HotelManagementSystem\HotelManagementSystem.Tests\obj\Debug\net5.0\HotelManagementSystem.Tests.csproj.AssemblyReference.cache
-C:\Coding\HotelManagementSystem\HotelManagementSystem.Tests\obj\Debug\net5.0\HotelManagementSystem.Tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Coding\HotelManagementSystem\HotelManagementSystem.Tests\obj\Debug\net5.0\HotelManagementSystem.Tests.AssemblyInfoInputs.cache
-C:\Coding\HotelManagementSystem\HotelManagementSystem.Tests\obj\Debug\net5.0\HotelManagementSystem.Tests.AssemblyInfo.cs
-C:\Coding\HotelManagementSystem\HotelManagementSystem.Tests\obj\Debug\net5.0\HotelManagementSystem.Tests.csproj.CoreCompileInputs.cache
