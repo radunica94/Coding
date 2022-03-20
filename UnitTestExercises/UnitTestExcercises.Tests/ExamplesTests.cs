@@ -22,8 +22,7 @@ namespace UnitTestExcercises.Tests
         [Fact]
         public void ExampleLoadTextFile_InvalidNameShouldFail()
         {
-            Assert.Throws<FileNotFoundException>(() => Examples.ExampleLoadTextFile(""));
-        }
-        //59:22
+            Assert.Throws<ArgumentException>("file",() => Examples.ExampleLoadTextFile(""));
+        }        
     }
 }
