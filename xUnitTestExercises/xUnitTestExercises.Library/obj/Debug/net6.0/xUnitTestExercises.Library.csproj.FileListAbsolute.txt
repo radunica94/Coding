@@ -1,0 +1,12 @@
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\bin\Debug\net6.0\xUnitTestExercises.Library.deps.json
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\bin\Debug\net6.0\xUnitTestExercises.Library.dll
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\bin\Debug\net6.0\xUnitTestExercises.Library.pdb
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.csproj.AssemblyReference.cache
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.AssemblyInfoInputs.cache
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.AssemblyInfo.cs
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.csproj.CoreCompileInputs.cache
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.dll
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\refint\xUnitTestExercises.Library.dll
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\xUnitTestExercises.Library.pdb
+C:\Coding\xUnitTestExercises\xUnitTestExercises.Library\obj\Debug\net6.0\ref\xUnitTestExercises.Library.dll
