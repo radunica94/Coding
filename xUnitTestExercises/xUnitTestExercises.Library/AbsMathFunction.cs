@@ -6,18 +6,8 @@ using System.Threading.Tasks;
 
 namespace xUnitTestExercises.Library
 {
-    public class MathFunctions
+    public class AbsMathFunction
     {
-        // Sqrt Function
-        public double SqrtMethod(double input)
-        {            
-            return Math.Sqrt(input);
-        }
-        // Pow Function 
-        public double PowMethod(double nrToBeRaised, double nrThatSpecifiesThePower)
-        {
-            return Math.Pow(nrToBeRaised,nrThatSpecifiesThePower);
-        }
         // Abs(Decimal) Functions
         public decimal AbsDecimalMethod(decimal value)
         {
@@ -32,7 +22,7 @@ namespace xUnitTestExercises.Library
         public Int16 AbsInt16Method(Int16 value)
         {
             return Math.Abs(value);
-        } 
+        }
         // Abs(Int32) Function
         public Int32 AbsInt32Method(Int32 value)
         {
