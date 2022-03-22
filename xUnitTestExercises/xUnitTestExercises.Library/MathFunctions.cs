@@ -34,24 +34,24 @@ namespace xUnitTestExercises.Library
             return Math.Abs(value);
         } 
         // Abs(Int32) Function
-        public Int32 AbsInt32Method()
+        public Int32 AbsInt32Method(Int32 value)
         {
-            return 0;
+            return Math.Abs(value);
         }
         // Abs(Int64) Function
-        public Int64 AbsInt64Method()
+        public Int64 AbsInt64Method(Int64 value)
         {
-            return 0;
+            return Math.Abs(value);
         }
         // Abs(SByte) Function
-        public SByte AbsSByteMethod()
+        public SByte AbsSByteMethod(SByte value)
         {
-            return 0;
+            return Math.Abs(value);
         }
         // Abs(Single) Function
-        public Single AbsSingleMethod()
+        public Single AbsSingleMethod(Single value)
         {
-            return 0;
+            return Math.Abs(value);
         }
     }
 }

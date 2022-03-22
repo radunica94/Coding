@@ -147,7 +147,7 @@ namespace xUnitTestExercises.Tests
         public void AbsInt16MethodTested_ShouldPassFirstTest()
         {
             MathFunctions math = new MathFunctions();
-            double expected = 45;
+            Int16 expected = 45;
             Int16 actual = math.AbsInt16Method(-45);
             Assert.Equal(expected, actual);
         }
@@ -155,7 +155,7 @@ namespace xUnitTestExercises.Tests
         public void AbsInt16MethodTested_ShouldPassSecondTest()
         {
             MathFunctions math = new MathFunctions();
-            double expected = 58;
+            Int16 expected = 58;
             Int16 actual = math.AbsInt16Method(-58);
             Assert.Equal(expected, actual);
         }
@@ -163,7 +163,7 @@ namespace xUnitTestExercises.Tests
         public void AbsInt16MethodTested_ShouldPassThirdTest()
         {
             MathFunctions math = new MathFunctions();
-            double expected = 7;
+            Int16 expected = 7;
             Int16 actual = math.AbsInt16Method(7);
             Assert.Equal(expected, actual);
         }
@@ -171,7 +171,7 @@ namespace xUnitTestExercises.Tests
         public void AbsInt16MethodTested_ShouldNotPassFirstTest()
         {
             MathFunctions math = new MathFunctions();
-            double expected = -45;
+            Int16 expected = -45;
             Int16 actual = math.AbsInt16Method(45);
             Assert.Equal(expected, actual);
         }
@@ -179,17 +179,109 @@ namespace xUnitTestExercises.Tests
         public void AbsInt16MethodTested_ShouldNotPassSecondTest()
         {
             MathFunctions math = new MathFunctions();
-            double expected = 11;
+            Int16 expected = 11;
             Int16 actual = math.AbsInt16Method(-10);
             Assert.Equal(expected, actual);
         }
         // Abs(Int32) Function
-
+        [Fact]
+        public void AbsInt32MethodTested_ShouldPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Int32 expected = 455844525;
+            Int32 actual = math.AbsInt32Method(-455844525);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsInt32MethodTested_ShouldPassSecondTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Int32 expected = 7;
+            Int32 actual = math.AbsInt32Method(7);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsInt32MethodTested_ShouldNotPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Int32 expected = -58;
+            Int32 actual = math.AbsInt32Method(58);
+            Assert.Equal(expected, actual);
+        }
         // Abs(Int64) Function
-
+        [Fact]
+        public void AbsInt64MethodTested_ShouldPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Int64 expected = 9455844525;
+            Int64 actual = math.AbsInt64Method(-9455844525);
+            Assert.Equal(expected,actual);
+        }
+        [Fact]
+        public void AbsInt64MethodTested_ShouldPassSecondTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Int64 expected = 7;
+            Int64 actual = math.AbsInt64Method(7);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsInt64MethodTested_ShouldNotPassSecondTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Int64 expected = -58;
+            Int64 actual = math.AbsInt64Method(-58);
+            Assert.Equal(expected, actual);
+        }
         // Abs(SByte) Function
-
+        [Fact]
+        public void AbsSByteMethodTested_ShouldPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            SByte expected = 87;
+            SByte actual = math.AbsSByteMethod(-87);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsSByteMethodTested_ShouldPassSecondTest()
+        {
+            MathFunctions math = new MathFunctions();
+            SByte expected = 7;
+            SByte actual = math.AbsSByteMethod(7);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsSByteMethodTested_ShouldNotPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            SByte expected = -87;
+            SByte actual = math.AbsSByteMethod(87);
+            Assert.Equal(expected, actual);
+        }
         // Abs(Single) Function
-
+        [Fact]
+        public void AbsSingleMethodTested_ShouldPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Single expected = 87;
+            Single actual = math.AbsSingleMethod(-87);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsSingleMethodTested_ShouldPassSecondTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Single expected = 87;
+            Single actual = math.AbsSingleMethod(87);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AbsSingleMethodTested_ShouldNotPassFirstTest()
+        {
+            MathFunctions math = new MathFunctions();
+            Single expected = -87;
+            Single actual = math.AbsSingleMethod(87);
+            Assert.Equal(expected, actual);
+        }
     }
 }
