@@ -32,7 +32,7 @@ namespace xUnitTestExercises.Tests
             SportRounds totalRounds = new SportRounds();
             int expected = 9;
             int actual = totalRounds.CalculateNumberOfRounds(16);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         [Fact]
         public void TotalRounds_ShouldNotPassWithSeventeenTeams()
@@ -40,7 +40,7 @@ namespace xUnitTestExercises.Tests
             SportRounds totalRounds = new SportRounds();
             int expected = 7;
             int actual = totalRounds.CalculateNumberOfRounds(17);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
     }
 }

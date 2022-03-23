@@ -40,7 +40,7 @@ namespace xUnitTestExercises.Tests
             Goats goats = new Goats();
             double expected = 7;
             double actual = goats.CalculateKilogrammsOfHay(1, 1, 3, 2, 1);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
 
     }

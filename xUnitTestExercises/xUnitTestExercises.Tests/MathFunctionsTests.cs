@@ -33,7 +33,7 @@ namespace xUnitTestExercises.Tests
             MathFunction math = new MathFunction();
             double expected = 10;
             double actual = math.SqrtMethod(81);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         //Pow Function
         [Fact]
@@ -58,7 +58,7 @@ namespace xUnitTestExercises.Tests
             MathFunction math = new MathFunction();
             double expected = 82;
             double actual = math.PowMethod(10, 2);
-            Assert.Equal(expected,actual);
+            Assert.NotEqual(expected,actual);
         }        
     }
 }

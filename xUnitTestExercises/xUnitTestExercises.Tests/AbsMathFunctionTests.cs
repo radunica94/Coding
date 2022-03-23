@@ -41,7 +41,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             decimal expected = 0.01M;
             decimal actual = math.AbsDecimalMethod(0.0M);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         [Fact]
         public void AbsDecimalMethodTested_ShouldNotPassTheSecondTest()
@@ -49,7 +49,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             decimal expected = 33;
             decimal actual = math.AbsDecimalMethod(33.2M);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         // Abs(Double) Function
         [Fact]
@@ -82,7 +82,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             double expected = 0.01;
             double actual = math.AbsDoubleMethod(0.0);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         [Fact]
         public void AbsDoubleMethodTested_ShouldNotPassTheSecondTest()
@@ -90,7 +90,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             double expected = 33;
             double actual = math.AbsDoubleMethod(33.2);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         // Abs(Int16) Function
         [Fact]
@@ -123,7 +123,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             Int16 expected = -45;
             Int16 actual = math.AbsInt16Method(45);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         [Fact]
         public void AbsInt16MethodTested_ShouldNotPassSecondTest()
@@ -131,7 +131,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             Int16 expected = 11;
             Int16 actual = math.AbsInt16Method(-10);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         // Abs(Int32) Function
         [Fact]
@@ -156,7 +156,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             Int32 expected = -58;
             Int32 actual = math.AbsInt32Method(58);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         // Abs(Int64) Function
         [Fact]
@@ -181,7 +181,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             Int64 expected = -58;
             Int64 actual = math.AbsInt64Method(-58);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         // Abs(SByte) Function
         [Fact]
@@ -206,7 +206,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             SByte expected = -87;
             SByte actual = math.AbsSByteMethod(87);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
         // Abs(Single) Function
         [Fact]
@@ -231,7 +231,7 @@ namespace xUnitTestExercises.Tests
             AbsMathFunction math = new AbsMathFunction();
             Single expected = -87;
             Single actual = math.AbsSingleMethod(87);
-            Assert.Equal(expected, actual);
+            Assert.NotEqual(expected, actual);
         }
     }
 }
