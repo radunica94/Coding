@@ -1,0 +1,8 @@
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\bin\Debug\RegasireaInformatiei.exe.config
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\bin\Debug\RegasireaInformatiei.exe
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\bin\Debug\RegasireaInformatiei.pdb
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.csproj.AssemblyReference.cache
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.csproj.SuggestedBindingRedirects.cache
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.csproj.CoreCompileInputs.cache
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.exe
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.pdb
