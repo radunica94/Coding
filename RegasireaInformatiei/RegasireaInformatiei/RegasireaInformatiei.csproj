@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="stopwordList.txt" />
     <Content Include="XML\Reuters_34\2504NEWS.XML" />
     <Content Include="XML\Reuters_34\2538NEWS.XML" />
     <Content Include="XML\Reuters_34\2775NEWS.XML" />
