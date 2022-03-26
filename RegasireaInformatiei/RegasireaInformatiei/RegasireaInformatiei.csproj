@@ -51,6 +51,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="acronime.txt" />
     <Content Include="stopwordList.txt" />
     <Content Include="XML\Reuters_34\2504NEWS.XML" />
     <Content Include="XML\Reuters_34\2538NEWS.XML" />
