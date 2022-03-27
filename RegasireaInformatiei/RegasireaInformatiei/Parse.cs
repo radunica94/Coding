@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -40,8 +41,7 @@ namespace RegasireaInformatiei
                 foreach(XmlNode node in code)
                 {
                     //Console.WriteLine(node.InnerText);
-                }
-                
+                }                
             }
             //Pentru afisarea unei liste care contine acronimele
             acronimList.AddRange(Acronime(titles));
@@ -52,13 +52,15 @@ namespace RegasireaInformatiei
             }
             StopWords(texts);
             // Pentru afisarea unei liste de articole care contine titlul + textul
-            article.AddRange(ReplaceAcronyms(titles));
-            article.AddRange(ReplaceAcronyms(texts));
-            for(int i = 0; i < article.Count; i++)
-            {               
-                Console.WriteLine(article[i]);                
+            titles = LowerCase(ReplaceAcronyms(titles));
+            texts = LowerCase(ReplaceAcronyms(texts));
+            for(int i = 0; i < titles.Count; i++)
+            {
+                Console.WriteLine("Article " + i + ":\n");
+                Console.WriteLine(titles[i]+"\n");
+                Console.WriteLine(texts[i] + "\n\n\n");                
             }
-
+            
             Console.ReadLine();
         }
         private static List<string> Acronime(List<string> text)
@@ -73,24 +75,40 @@ namespace RegasireaInformatiei
         }
         private static List<string> ReplaceAcronyms(List<string> text)
         {
-            List<string> acronyms = File.ReadAllLines("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\acronime.txt").ToList();
-            
+            var x = new AcronymsDictionary("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\acronime.txt");
+            //x.GetValue("USA");
             for(int i = 0; i < text.Count; i++)
             {
-                for(int j = 0; j < acronyms.Count; j++)
+                var filtered = FilterWords(text[i]);
+                if(filtered != null && filtered.Any())
                 {
-                    if (text[i].Equals(acronyms[0].First()))
+                    foreach(var acronym in filtered)
                     {
-                        text[i] = text[i].Replace(" " + acronyms[0] + ",", acronyms[1]);
+                        var value = x.GetAcronyms(acronym);
+                        if(value != null && value != string.Empty)
+                        {
+                            text[i] = text[i].Replace(acronym, value);
+                        }
                     }
                 }
             }
-            return null;
+            
+            return text;
+        }
+        private static List<string> LowerCase(List<string> text)
+        {
+            List<string> lowerCase = new List<string>();
+            for (int i = 0; i < text.Count; i++)
+            {
+                lowerCase.Add(text[i].ToLower());
+            }
+            return lowerCase;
         }
         private static List<string> FilterWords(string str)
         {
             var upper = str.Split(' ').Where(s=> String.Equals(s,s.ToUpper(),StringComparison.Ordinal));
-
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            upper = upper.Select(s=> rgx.Replace(s, ""));
             return upper.ToList();
         }
         private static string StopWords(List<string> texts)
