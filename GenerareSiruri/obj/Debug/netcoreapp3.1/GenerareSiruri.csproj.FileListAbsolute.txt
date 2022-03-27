@@ -1,0 +1,14 @@
+C:\documente\CSharp\CSharp2021\GenerareSiruri\bin\Debug\netcoreapp3.1\GenerareSiruri.exe
+C:\documente\CSharp\CSharp2021\GenerareSiruri\bin\Debug\netcoreapp3.1\GenerareSiruri.deps.json
+C:\documente\CSharp\CSharp2021\GenerareSiruri\bin\Debug\netcoreapp3.1\GenerareSiruri.runtimeconfig.json
+C:\documente\CSharp\CSharp2021\GenerareSiruri\bin\Debug\netcoreapp3.1\GenerareSiruri.runtimeconfig.dev.json
+C:\documente\CSharp\CSharp2021\GenerareSiruri\bin\Debug\netcoreapp3.1\GenerareSiruri.dll
+C:\documente\CSharp\CSharp2021\GenerareSiruri\bin\Debug\netcoreapp3.1\GenerareSiruri.pdb
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.csproj.AssemblyReference.cache
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.GeneratedMSBuildEditorConfig.editorconfig
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.AssemblyInfoInputs.cache
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.AssemblyInfo.cs
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.csproj.CoreCompileInputs.cache
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.dll
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.pdb
+C:\documente\CSharp\CSharp2021\GenerareSiruri\obj\Debug\netcoreapp3.1\GenerareSiruri.genruntimeconfig.cache
