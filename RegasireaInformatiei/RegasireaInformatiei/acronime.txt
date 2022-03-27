@@ -1,1 +1,46 @@
-﻿
+USA:,United States of America
+CEO,chief executive officer
+OK,right
+Q1,First Quarter
+Q2,Second Quarter
+Q4,Forth Quarter
+U.S.,United States
+WSJ,The Wall Street Journal
+BMC,British Motor Corporation
+DCD,Digital Cordless Telecommunications
+FY,Financial Year
+NBC,National Broadcasting Company
+ESPN,Entertainment and Sports Programming Network
+UBS,Union Bank of Switzerland
+WOW!,Wide Open World
+IBM,International Business Machines
+PC,personal computer
+UNIX,Uniplexed Information and Computing System
+AT&T,American Telephone and Telegraph Company
+MCI,Mild Cognitive Impairment
+DBT,Dialectical Behavior Therapy
+OBT, Online Booking Tool
+NT,Northern Territory
+HTML,HyperText Markup Language
+PCS,Personal Communications Service
+GTE,General Telephone Electronics
+NYNEX,New York/New England EXchange
+AMC,American Motors Corporation
+INC.,Incorporated
+TV,television
+US,United States
+CNBC,Consumer News and Business Channel
+3-D,three dimensions or three-dimensional
+usa,united states america
+Jan,January
+Feb,February
+Mar,March
+Apr,April
+May,May
+Jun,June
+Jul,July
+Aug,August
+Sep,September
+Oct,October
+Nov,November
+Dec,December

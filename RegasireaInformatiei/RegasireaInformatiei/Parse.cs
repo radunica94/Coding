@@ -19,6 +19,7 @@ namespace RegasireaInformatiei
             
             List<string> xmlPaths = Directory.GetFiles("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\XML\\Reuters_34").ToList();
             List<XmlDocument> xmlDocuments = new List<XmlDocument>();
+            
             foreach (string xmlPath in xmlPaths)
             {
                 XmlDocument xmlDocument = new XmlDocument();
@@ -29,6 +30,7 @@ namespace RegasireaInformatiei
             List<string> texts = new List<string>();
             List<string> codes = new List<string>();
             List<string> acronimList = new List<string>();
+            List<string> article = new List<string>();
             for(int i = 0; i < xmlDocuments.Count; i++)
             {
                 titles.Add(xmlDocuments[i].GetElementsByTagName("title")[0].InnerText);
@@ -41,14 +43,21 @@ namespace RegasireaInformatiei
                 }
                 
             }
+            //Pentru afisarea unei liste care contine acronimele
             acronimList.AddRange(Acronime(titles));
             acronimList.AddRange(Acronime(texts));
-
             for(int i = 0; i < acronimList.Count; i++)
             {
-                Console.WriteLine(acronimList[i]);
+                //Console.WriteLine(acronimList[i]);                 
             }
             StopWords(texts);
+            // Pentru afisarea unei liste de articole care contine titlul + textul
+            article.AddRange(ReplaceAcronyms(titles));
+            article.AddRange(ReplaceAcronyms(texts));
+            for(int i = 0; i < article.Count; i++)
+            {               
+                Console.WriteLine(article[i]);                
+            }
 
             Console.ReadLine();
         }
@@ -62,8 +71,23 @@ namespace RegasireaInformatiei
 
             return acronime;
         }
-
-        static List<string> FilterWords(string str)
+        private static List<string> ReplaceAcronyms(List<string> text)
+        {
+            List<string> acronyms = File.ReadAllLines("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\acronime.txt").ToList();
+            
+            for(int i = 0; i < text.Count; i++)
+            {
+                for(int j = 0; j < acronyms.Count; j++)
+                {
+                    if (text[i].Equals(acronyms[0].First()))
+                    {
+                        text[i] = text[i].Replace(" " + acronyms[0] + ",", acronyms[1]);
+                    }
+                }
+            }
+            return null;
+        }
+        private static List<string> FilterWords(string str)
         {
             var upper = str.Split(' ').Where(s=> String.Equals(s,s.ToUpper(),StringComparison.Ordinal));
 
@@ -71,13 +95,12 @@ namespace RegasireaInformatiei
         }
         private static string StopWords(List<string> texts)
         {
-            List<string> stopWords = new List<string>();
-            List<string> textfile = File.ReadAllLines("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\stopwordList.txt").ToList();
+            List<string> stopWords = File.ReadAllLines("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\stopwordList.txt").ToList();
             for(int i = 0; i < texts.Count; i++)
             {
-                for(int j = 0; j < textfile.Count; j++)
+                for(int j = 0; j < stopWords.Count; j++)
                 {
-                    texts[i] = texts[i].Replace(" " + textfile[j] + " ", " ");
+                    texts[i] = texts[i].Replace(" " + stopWords[j] + " ", " ");
                 }
                 //Console.WriteLine(texts[i]);
             }            
