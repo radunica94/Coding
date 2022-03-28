@@ -1,0 +1,22 @@
+For creating stored procedures example:
+
+
+CREATE PROCEDURE dbo.spStudents	
+	@FirstName nvarchar(100),
+	@LastName nvarchar(100),
+	@Email nvarchar(100),
+	@Phone nvarchar(20),
+	@Grade nvarchar(10),
+	@Birthday datetime,
+	@id int = 0 output
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+	insert into dbo.Students(FirstName,LastName,Email,Phone,Grade,Birthday)
+	values(@FirstName,@LastName,@Email,@Phone,@Grade,@Birthday);
+	
+	select @id = SCOPE_IDENTITY();
+END
+GO
+

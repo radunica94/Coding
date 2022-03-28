@@ -7,7 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementSystem.Pres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementSystem.Business", "SchoolManagementSystem.Business\SchoolManagementSystem.Business.csproj", "{037E8F45-C82F-49A8-A280-61864299DCE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementSystem.DataAccess", "SchoolManagementSystem.DataAccess\SchoolManagementSystem.DataAccess.csproj", "{C7E0DD71-1833-4A77-A719-6B0C78C150A2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{E2771B3B-86A7-4163-AD64-9E1B48CEECCB}"
+	ProjectSection(SolutionItems) = preProject
+		DataBaseNotes.txt = DataBaseNotes.txt
+		ProjectDevelopment.txt = ProjectDevelopment.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,6 @@ Global
 		{037E8F45-C82F-49A8-A280-61864299DCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{037E8F45-C82F-49A8-A280-61864299DCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{037E8F45-C82F-49A8-A280-61864299DCE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7E0DD71-1833-4A77-A719-6B0C78C150A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7E0DD71-1833-4A77-A719-6B0C78C150A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7E0DD71-1833-4A77-A719-6B0C78C150A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7E0DD71-1833-4A77-A719-6B0C78C150A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

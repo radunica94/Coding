@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolManagementSystem.Business\SchoolManagementSystem.Business.csproj" />
+  </ItemGroup>
+
 </Project>

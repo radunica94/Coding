@@ -1,0 +1,5 @@
+Notes on how the project is developing
+- install Dapper
+- install System.Configuration.ConfigurationManager
+- install System.Data.SqlClient
+- create the connectionString in App.config
