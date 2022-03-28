@@ -1,0 +1,12 @@
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\bin\Debug\net6.0\SchoolManagementSystem.Business.deps.json
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\bin\Debug\net6.0\SchoolManagementSystem.Business.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\bin\Debug\net6.0\SchoolManagementSystem.Business.pdb
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.csproj.AssemblyReference.cache
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.AssemblyInfoInputs.cache
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.AssemblyInfo.cs
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.csproj.CoreCompileInputs.cache
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\refint\SchoolManagementSystem.Business.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.pdb
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\ref\SchoolManagementSystem.Business.dll

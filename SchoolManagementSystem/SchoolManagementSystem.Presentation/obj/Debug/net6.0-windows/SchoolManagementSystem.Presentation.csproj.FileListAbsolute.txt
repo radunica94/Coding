@@ -16,3 +16,14 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\n
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.pdb
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.genruntimeconfig.cache
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\ref\SchoolManagementSystem.Presentation.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Presentation.dll.config
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\Dapper.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Business.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Business.pdb
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.csproj.CopyComplete
