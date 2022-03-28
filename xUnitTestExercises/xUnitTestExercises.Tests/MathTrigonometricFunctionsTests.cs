@@ -53,5 +53,21 @@ namespace xUnitTestExercises.Tests
             double actual = math.AcoshMethod(2.5f);
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public void AcoshMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.AcoshMethod(1);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AcoshMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.AcoshMethod(0);
+            Assert.NotEqual(expected, actual);
+        }
     }
 }

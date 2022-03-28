@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace xUnitTestExercises.Library
 {
-    public class MathFunction
+    public class MathAlgebraFunctions
     {
-        // Sqrt Function
+        // Sqrt - Returnează rădăcina pătrată a unui număr specificat.
         public double SqrtMethod(double input)
-        {            
+        {
             return Math.Sqrt(input);
         }
-        // Pow Function 
+        // Pow - Returns a specified number raised to the specified power. 
         public double PowMethod(double nrToBeRaised, double nrThatSpecifiesThePower)
         {
-            return Math.Pow(nrToBeRaised,nrThatSpecifiesThePower);
-        }        
+            return Math.Pow(nrToBeRaised, nrThatSpecifiesThePower);
+        }
     }
 }
