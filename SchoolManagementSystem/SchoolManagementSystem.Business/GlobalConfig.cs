@@ -1,4 +1,4 @@
-﻿using SchoolManagementSystem.DataAccess;
+﻿using SchoolManagementSystem.Business.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,14 +10,14 @@ namespace SchoolManagementSystem.Business
 {
     public class GlobalConfig
     {
-        public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
+        public static IDataConnection Connections { get; private set; }
 
         public static void InitializeConnection(bool database)
         {
             if (database)
             {
                 SqlConnector sql = new SqlConnector();
-                Connections.Add(sql);
+                Connections = sql;
             }
         }
 

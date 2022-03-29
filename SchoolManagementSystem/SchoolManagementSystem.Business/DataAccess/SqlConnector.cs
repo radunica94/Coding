@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementSystem.DataAccess
+namespace SchoolManagementSystem.Business.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
