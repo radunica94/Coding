@@ -175,5 +175,193 @@ namespace xUnitTestExercises.Tests
         }
 
         // Atanh
+        [Fact]
+        public void AtanhMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.AtanhMethod(0);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AtanhMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.PositiveInfinity;
+            double actual = math.AtanhMethod(1);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void AtanhMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.NegativeInfinity;
+            double actual = math.AtanhMethod(1);
+            Assert.NotEqual(expected, actual);
+        }
+
+        // Cos
+        [Fact]
+        public void CosMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 1;
+            double actual = math.CosMethod(0);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void CosMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.NaN;
+            double actual = math.CosMethod(double.NegativeInfinity);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void CosMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.NaN;
+            double actual = math.CosMethod(0);
+            Assert.NotEqual(expected , actual);
+        }
+
+        // Cosh
+        [Fact]
+        public void CoshMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 1;
+            double actual = math.CoshMethod(0);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void CoshMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.PositiveInfinity;
+            double actual = math.CoshMethod(double.NegativeInfinity);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void CoshMethod_ShouldPassThiredTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.PositiveInfinity;
+            double actual = math.CoshMethod(double.PositiveInfinity);
+            Assert.Equal(expected,actual);
+        }
+        [Fact]
+        public void CoshMethod_ShouldNotPasFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.NegativeInfinity;
+            double actual = math.CoshMethod(double.PositiveInfinity);
+            Assert.NotEqual(expected, actual);
+        }
+
+        // Sin
+        [Fact]
+        public void SinMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0.7071067811865476;
+            double actual = math.SinMethod(Math.PI/4); //45 grade
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void SinMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = -0.5478534738880397;
+            double actual = math.SinhMethod(-Math.PI/6);//-60 grade
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void SinMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.SinhMethod(Math.PI/2);//90 grade
+            Assert.NotEqual(expected, actual);
+        }
+
+        // Sinh
+        [Fact]
+        public void SinhMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.SinhMethod(0);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void SinhMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.PositiveInfinity;
+            double actual = math.SinhMethod(double.PositiveInfinity);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void SinhMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = double.NegativeInfinity;
+            double actual = math.SinhMethod(double.PositiveInfinity);
+            Assert.NotEqual(expected, actual);
+        }
+
+        // Tan
+        [Fact]
+        public void TanMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0.9999999999999999;//1
+            double actual = math.TanMethod(Math.PI / 4);//45 grade
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void TanMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.TanMethod(0);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void TanMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.TanMethod(1);
+            Assert.NotEqual(expected, actual);
+        }
+
+        // Tanh 
+        [Fact]
+        public void TanhMethod_ShouldPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 0;
+            double actual = math.TanhMethod(0);
+            Assert.Equal(expected,actual);  
+        }
+        [Fact]
+        public void TanhMethod_ShouldPassSecondTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 1;
+            double actual = math.TanhMethod(double.PositiveInfinity);
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void TanhMethod_ShouldNotPassFirstTest()
+        {
+            MathTrigonometricFunctions math = new MathTrigonometricFunctions();
+            double expected = 1;
+            double actual = math.TanhMethod(double.NegativeInfinity);
+            Assert.NotEqual(expected, actual);
+        }
     }
 }
