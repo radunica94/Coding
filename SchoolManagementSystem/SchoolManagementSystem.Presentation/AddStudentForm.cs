@@ -48,7 +48,7 @@ namespace SchoolManagementSystem.Presentation
             return output;
         }
 
-        private void c(object sender, EventArgs e)
+        private void addStudentsButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
