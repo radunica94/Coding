@@ -18,5 +18,17 @@ namespace xUnitTestExercises.Library
         {
             return Math.Pow(nrToBeRaised, nrThatSpecifiesThePower);
         }
+
+        // Cbrt(double)
+
+        // Log(double)
+
+        // Log(double,double)
+
+        //Log10(double)
+
+        // Log2(double)
+
+        // ILogB(double)
     }
 }
