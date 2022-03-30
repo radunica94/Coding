@@ -60,7 +60,7 @@ namespace SchoolManagementSystem.Presentation
                 students.Grade = gradeTextBox.Text;
                 students.Birthday = birthdayDateTimePicker.Value.ToString();
                 
-                GlobalConfig.Connections.AddStudents(students);
+                GlobalConfig.Connection.AddStudents(students);
 
                 firstNameTextBox.Text = "";
                 lastNameTextBox.Text = "";

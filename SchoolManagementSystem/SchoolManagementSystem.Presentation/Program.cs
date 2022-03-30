@@ -1,3 +1,6 @@
+using SchoolManagementSystem.Business;
+
+
 namespace SchoolManagementSystem.Presentation
 {
     internal static class Program
@@ -10,7 +13,15 @@ namespace SchoolManagementSystem.Presentation
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            
+            //ApplicationConfiguration.Initialize();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            //SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+            SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.Sql);
+
             Application.Run(new TestForm());
         }
     }

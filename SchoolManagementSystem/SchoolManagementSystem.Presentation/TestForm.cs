@@ -14,7 +14,7 @@ namespace SchoolManagementSystem.Presentation
 {
     public partial class TestForm : Form
     {
-        private List<TestModel> testList = new List<TestModel>();
+        
         public TestForm()
         {
             InitializeComponent();
@@ -27,8 +27,8 @@ namespace SchoolManagementSystem.Presentation
                 TestModel test = new TestModel();
                 test.Test = testTextBox.Text;
 
-                test = GlobalConfig.Connections.TestDB(test);
-                testList.Add(test);
+                GlobalConfig.Connection.TestDB(test);
+               
 
                 testTextBox.Text = "";
             }

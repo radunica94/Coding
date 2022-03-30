@@ -8,13 +8,29 @@ using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Business
 {
-    public class GlobalConfig
+    public static class GlobalConfig
     {
-        public static IDataConnection Connections { get; private set; }
+        public static IDataConnection Connection { get; private set; }
 
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+
+        public static void InitializeConnections(DatabaseType db)
+        {
+            if (db == DatabaseType.Sql)
+            {
+                //TODO - Set up the Sql Connector properly
+                SqlConnector sql = new SqlConnector();
+                Connection = sql;
+            }
+            else if (db == DatabaseType.TextFile)
+            {
+                //TODO -  Create the Text Connection
+                TextConnector text = new TextConnector();
+                Connection = text;
+            }
         }
     }
 }
