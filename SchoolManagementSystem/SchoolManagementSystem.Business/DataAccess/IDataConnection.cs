@@ -10,5 +10,6 @@ namespace SchoolManagementSystem.Business.DataAccess
     public interface IDataConnection
     {
         StudentsModel AddStudents(StudentsModel students);
+        TestModel TestDB (TestModel test );
     }
 }

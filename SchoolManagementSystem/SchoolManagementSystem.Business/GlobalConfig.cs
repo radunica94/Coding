@@ -12,15 +12,6 @@ namespace SchoolManagementSystem.Business
     {
         public static IDataConnection Connections { get; private set; }
 
-        public static void InitializeConnection(bool database)
-        {
-            if (database)
-            {
-                SqlConnector sql = new SqlConnector();
-                Connections = sql;
-            }
-        }
-
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;

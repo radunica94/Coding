@@ -27,3 +27,4 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\n
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Business.dll
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Business.pdb
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.csproj.CopyComplete
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.TestForm.resources

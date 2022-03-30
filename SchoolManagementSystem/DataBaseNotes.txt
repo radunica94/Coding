@@ -7,7 +7,7 @@ CREATE PROCEDURE dbo.spStudents
 	@Email nvarchar(100),
 	@Phone nvarchar(20),
 	@Grade nvarchar(10),
-	@Birthday datetime,
+	@Birthday nvarchar(50),
 	@id int = 0 output
 AS
 BEGIN

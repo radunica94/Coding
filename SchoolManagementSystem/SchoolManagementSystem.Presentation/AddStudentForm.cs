@@ -53,14 +53,14 @@ namespace SchoolManagementSystem.Presentation
             if (ValidateForm())
             {
                 StudentsModel students = new StudentsModel();
-                students.firstName = firstNameTextBox.Text;
-                students.lastName = lastNameTextBox.Text;
-                students.email = emailTextBox.Text;
-                students.phone = phoneTextBox.Text;
-                students.grade = gradeTextBox.Text;
-                students.birthday = birthdayDateTimePicker.Value;
+                students.FirstName = firstNameTextBox.Text;
+                students.LastName = lastNameTextBox.Text;
+                students.Email = emailTextBox.Text;
+                students.Phone = phoneTextBox.Text;
+                students.Grade = gradeTextBox.Text;
+                students.Birthday = birthdayDateTimePicker.Value.ToString();
                 
-                students = GlobalConfig.Connections.AddStudents(students);
+                GlobalConfig.Connections.AddStudents(students);
 
                 firstNameTextBox.Text = "";
                 lastNameTextBox.Text = "";
