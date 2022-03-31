@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Annytab.Stemmer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,13 +15,13 @@ namespace RegasireaInformatiei
 {
     public class Parse
     {
-        
+
         static public void Main(String[] args)
-        {  
-            
+        {
+
             List<string> xmlPaths = Directory.GetFiles("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\XML\\Reuters_34").ToList();
             List<XmlDocument> xmlDocuments = new List<XmlDocument>();
-            
+
             foreach (string xmlPath in xmlPaths)
             {
                 XmlDocument xmlDocument = new XmlDocument();
@@ -31,38 +32,45 @@ namespace RegasireaInformatiei
             List<string> texts = new List<string>();
             List<string> codes = new List<string>();
             List<string> acronimList = new List<string>();
-            List<string> article = new List<string>();
-            for(int i = 0; i < xmlDocuments.Count; i++)
+
+            for (int i = 0; i < xmlDocuments.Count; i++)
             {
                 titles.Add(xmlDocuments[i].GetElementsByTagName("title")[0].InnerText);
                 texts.Add(xmlDocuments[i].GetElementsByTagName("text")[0].InnerText);
                 //codes.Add(xmlDocuments[i].SelectSingleNode("//codes[@class='bip:topics:1.0']"));
                 var code = xmlDocuments[i].SelectNodes("//codes[@class='bip:topics:1.0']//code/@code");
-                foreach(XmlNode node in code)
+                foreach (XmlNode node in code)
                 {
                     //Console.WriteLine(node.InnerText);
-                }                
+                }
             }
             //Pentru afisarea unei liste care contine acronimele
             acronimList.AddRange(Acronime(titles));
             acronimList.AddRange(Acronime(texts));
-            for(int i = 0; i < acronimList.Count; i++)
+            for (int i = 0; i < acronimList.Count; i++)
             {
                 //Console.WriteLine(acronimList[i]);                 
             }
             StopWords(texts);
             // Pentru afisarea unei liste de articole care contine titlul + textul
+
             titles = LowerCase(ReplaceAcronyms(titles));
             texts = LowerCase(ReplaceAcronyms(texts));
-            for(int i = 0; i < titles.Count; i++)
+            for (int i = 0; i < titles.Count; i++)
             {
                 Console.WriteLine("Article " + i + ":\n");
-                Console.WriteLine(titles[i]+"\n");
-                Console.WriteLine(texts[i] + "\n\n\n");                
+                Console.WriteLine(titles[i] + "\n");
+                Console.WriteLine(texts[i] + "\n\n\n");
             }
+
+            // Unique words
             
+            //IEnumerable<string> allWords = titles.Split(' ').;
+            //IEnumerable<string> uniqueWords = allWords.GroupBy(w => w).Where(g => g.Count() == 1).Select(g => g.Key);
+
             Console.ReadLine();
         }
+        
         private static List<string> Acronime(List<string> text)
         {
             var acronime = new List<string>();
@@ -91,10 +99,11 @@ namespace RegasireaInformatiei
                         }
                     }
                 }
-            }
-            
+            }            
             return text;
         }
+        // TODO - Replace "Prescurtari"       
+
         private static List<string> LowerCase(List<string> text)
         {
             List<string> lowerCase = new List<string>();
@@ -124,8 +133,10 @@ namespace RegasireaInformatiei
             }            
             return null;
         }
-
-        //TODO - pentru acronime , foloseste regex pentru a gasi literele mari
-        //TODO - afiseaza toate cu litere meci, text si tiltlu
+        // TODO - inlocuire de prescurtari
+        // TODO - un txt cu toate cuvintele unice din lista finala si numerotate
+        // TODO - sa fac o functie in care sa transcriu toate metodele folosite pentru prelucra textul
+        // TODO - salveaza listele intr-un dictionar global pentru a putea lua indexul fiecarui cuvant(numarul de aparitii , unice)
+        // TODO - fiecare cuvant il salvez intr-un dictionar, si specific numarul de aparitii : Dictionary<string,int> - aparitii unice
     }
 }

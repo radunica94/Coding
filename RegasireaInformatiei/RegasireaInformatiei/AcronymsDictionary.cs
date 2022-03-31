@@ -34,5 +34,7 @@ namespace RegasireaInformatiei
             acronyms.TryGetValue(text, out description);
             return description;
         }
+        
+        // TODO - inlocuiesc "Prescurtarile" aici si il apelez in metoda de ReplaceAcronyms
     }
 }

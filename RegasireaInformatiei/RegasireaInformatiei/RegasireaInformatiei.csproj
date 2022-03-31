@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Annytab.Stemmer, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Annytab.Stemmer.1.2.4\lib\netstandard2.0\Annytab.Stemmer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -50,9 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="acronime.txt" />
+    <Content Include="Prescurtari.txt" />
     <Content Include="stopwordList.txt" />
     <Content Include="XML\Reuters_34\2504NEWS.XML" />
     <Content Include="XML\Reuters_34\2538NEWS.XML" />
