@@ -10,5 +10,6 @@ namespace SchoolManagementSystem.Business.Models
     {
         public int Id { get; set; }
         public string Test { get; set; }
+        public DateTime Date { get; set; }
     }
 }

@@ -58,7 +58,7 @@ namespace SchoolManagementSystem.Presentation
                 students.Email = emailTextBox.Text;
                 students.Phone = phoneTextBox.Text;
                 students.Grade = gradeTextBox.Text;
-                students.Birthday = birthdayDateTimePicker.Value.ToString();
+                students.Birthday = birthdayDateTimePicker.Value;
                 
                 GlobalConfig.Connection.AddStudents(students);
 

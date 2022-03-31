@@ -35,6 +35,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 
                 t.Id = int.Parse(cols[0]);
                 t.Test = cols[1];
+                t.Date = Convert.ToDateTime(cols[2]);
                
                 output.Add(t);
             }
@@ -47,7 +48,7 @@ namespace SchoolManagementSystem.Business.DataAccess
 
             foreach (TestModel p in test)
             {
-                lines.Add($"{ p.Id },{ p.Test }");
+                lines.Add($"{ p.Id },{ p.Test },{p.Date}");
             }
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }

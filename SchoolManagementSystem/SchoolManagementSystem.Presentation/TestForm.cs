@@ -26,6 +26,7 @@ namespace SchoolManagementSystem.Presentation
             {
                 TestModel test = new TestModel();
                 test.Test = testTextBox.Text;
+                test.Date = dateTimePicker1.Value;
 
                 GlobalConfig.Connection.TestDB(test);
                
