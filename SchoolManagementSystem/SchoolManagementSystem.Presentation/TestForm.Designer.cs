@@ -31,6 +31,9 @@
             this.testButton = new System.Windows.Forms.Button();
             this.testTextBox = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // testButton
@@ -59,17 +62,39 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 31);
             this.dateTimePicker1.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(189, 114);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 75);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // imgButton
+            // 
+            this.imgButton.Location = new System.Drawing.Point(393, 161);
+            this.imgButton.Name = "imgButton";
+            this.imgButton.Size = new System.Drawing.Size(112, 34);
+            this.imgButton.TabIndex = 4;
+            this.imgButton.Text = "img";
+            this.imgButton.UseVisualStyleBackColor = true;
+            this.imgButton.Click += new System.EventHandler(this.imgButton_Click);
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 107);
+            this.ClientSize = new System.Drawing.Size(721, 231);
+            this.Controls.Add(this.imgButton);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.testTextBox);
             this.Controls.Add(this.testButton);
             this.Name = "TestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +105,7 @@
         private Button testButton;
         private TextBox testTextBox;
         private DateTimePicker dateTimePicker1;
+        private PictureBox pictureBox1;
+        private Button imgButton;
     }
 }

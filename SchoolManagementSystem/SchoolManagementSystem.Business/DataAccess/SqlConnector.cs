@@ -42,6 +42,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 var p = new DynamicParameters();
                 p.Add("@Test", test.Test);
                 p.Add("@Date",test.Date);
+                p.Add("@Picture",test.Picture);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spTest", p, commandType: CommandType.StoredProcedure);
