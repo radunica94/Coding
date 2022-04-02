@@ -1,5 +1,8 @@
-﻿using SchoolManagementSystem.Business;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using SchoolManagementSystem.Business;
 using SchoolManagementSystem.Business.Models;
+using SchoolManagementSystem.Business.Models.TestModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +18,7 @@ namespace SchoolManagementSystem.Presentation
 {
     public partial class TestForm : Form
     {
-        
+        List<TestModel> models = GlobalConfig.Connection.GetTest();
         public TestForm()
         {
             InitializeComponent();
@@ -35,7 +38,8 @@ namespace SchoolManagementSystem.Presentation
                 test.Picture = ms.ToArray();
 
                 GlobalConfig.Connection.TestDB(test);
-               
+
+                WireUpList();
 
                 testTextBox.Text = "";
             }
@@ -51,7 +55,11 @@ namespace SchoolManagementSystem.Presentation
             if (testTextBox.Text.Length == 0)
             {
                 output = false;
-            }          
+            }         
+            if(textBox1.Text.Length == 0)
+            {
+                output=false;
+            }
 
             return output;
         }
@@ -75,5 +83,40 @@ namespace SchoolManagementSystem.Presentation
                 MessageBox.Show("An Error Occured","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void WireUpList()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = models;
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            WireUpList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WireUpList();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Validate())
+            {
+                TestModel2 test2 = new TestModel2();
+                test2.Name = textBox1.Text;
+
+                GlobalConfig.Connection.Test2DB(test2);
+
+                textBox1.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+        }
+        
     }
 }

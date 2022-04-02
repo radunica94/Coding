@@ -1,4 +1,5 @@
 ﻿using SchoolManagementSystem.Business.Models;
+using SchoolManagementSystem.Business.Models.TestModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -40,6 +41,33 @@ namespace SchoolManagementSystem.Business.DataAccess
                 output.Add(t);
             }
             return output;
+        }
+        public static List<TestModel2> ConvertToTest2Models(this List<string> lines)
+        {
+            List<TestModel2> output = new List<TestModel2>();
+            foreach (string line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                TestModel2 t = new TestModel2();
+
+                t.Id = int.Parse(cols[0]);
+                t.Name = cols[1];
+              
+
+                output.Add(t);
+            }
+            return output;
+        }
+        public static void SaveToTest2File(this List<TestModel2> test, string fileName)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (TestModel2 p in test)
+            {
+                lines.Add($"{ p.Id },{ p.Name }");
+            }
+            File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
 
         public static void SaveToTestFile(this List<TestModel> test, string fileName)

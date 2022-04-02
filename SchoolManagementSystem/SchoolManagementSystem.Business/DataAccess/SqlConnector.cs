@@ -2,6 +2,7 @@
 using Dapper;
 using SchoolManagementSystem.Business;
 using SchoolManagementSystem.Business.Models;
+using SchoolManagementSystem.Business.Models.TestModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -32,6 +33,32 @@ namespace SchoolManagementSystem.Business.DataAccess
                 students.Id = p.Get<int>("@id");
 
                 return students;
+            }
+        }
+
+        public List<TestModel> GetTest()
+        {
+            List<TestModel> output;
+            using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                output=connection.Query<TestModel>("dbo.spTable_1_SELECT").ToList();
+            }
+            return output;
+        }
+
+        public TestModel2 Test2DB(TestModel2 test)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Name", test.Name);
+
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+                connection.Execute("dbo.spTest2_Insert", p, commandType: CommandType.StoredProcedure);
+
+                test.Id = p.Get<int>("@id");
+
+                return test;
             }
         }
 

@@ -10,3 +10,5 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\refint\SchoolManagementSystem.Business.dll
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.pdb
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\ref\SchoolManagementSystem.Business.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Business\obj\Debug\net6.0\SchoolManagementSystem.Business.csproj.ResolveComReference.cache
