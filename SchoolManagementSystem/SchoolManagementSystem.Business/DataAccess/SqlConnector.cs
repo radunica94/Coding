@@ -59,6 +59,7 @@ namespace SchoolManagementSystem.Business.DataAccess
             using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
                 var p = new DynamicParameters();
+                p.Add("@ClassName",classes.ClassName);
                 p.Add("@id",0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spClasses_Insert",p, commandType: CommandType.StoredProcedure);

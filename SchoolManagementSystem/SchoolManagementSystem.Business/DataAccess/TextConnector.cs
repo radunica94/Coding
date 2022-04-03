@@ -13,6 +13,8 @@ namespace SchoolManagementSystem.Business.DataAccess
         private const string TestFile = "Test.txt";
         private const string TestFile2 = "Test2.txt";
         private const string SubjectTxt = "Subject.txt";
+        private const string StudentTxt = "Student.txt";
+        private const string ClassesTxt = "Classes.txt";
         public StudentsModel AddStudents(StudentsModel students)
         {
             throw new NotImplementedException();
@@ -25,6 +27,8 @@ namespace SchoolManagementSystem.Business.DataAccess
 
         public ClassesModel CreateClasses(ClassesModel classes)
         {
+            // List<StudentsModel> students = ClassesTxt.FullFilePatch().LoadFile().ConvertToClassModels(SubjectTxt,StudentTxt)
+            // TODO - Text for add student add subject and createClasses
             throw new NotImplementedException();
         }
 

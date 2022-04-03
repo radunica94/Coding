@@ -107,9 +107,19 @@ namespace SchoolManagementSystem.Presentation
 
         private void createClassButton_Click(object sender, EventArgs e)
         {
-            ClassesModel classes = new ClassesModel();                       
+            if(classNameTextBox.Text.Length > 0)
+            {
+                ClassesModel classes = new ClassesModel();
+                classes.ClassName = classNameTextBox.Text;
 
-            GlobalConfig.Connection.CreateClasses(classes);
+                GlobalConfig.Connection.CreateClasses(classes);
+
+                classNameTextBox.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
         }
 
     }

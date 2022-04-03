@@ -39,6 +39,7 @@
             this.removeSubjectButton = new System.Windows.Forms.Button();
             this.addStudentButton = new System.Windows.Forms.Button();
             this.addSubjectButton = new System.Windows.Forms.Button();
+            this.classNameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // createStudentButton
@@ -81,7 +82,7 @@
             // 
             // createClassButton
             // 
-            this.createClassButton.Location = new System.Drawing.Point(12, 388);
+            this.createClassButton.Location = new System.Drawing.Point(328, 576);
             this.createClassButton.Name = "createClassButton";
             this.createClassButton.Size = new System.Drawing.Size(170, 34);
             this.createClassButton.TabIndex = 4;
@@ -145,11 +146,19 @@
             this.addSubjectButton.UseVisualStyleBackColor = true;
             this.addSubjectButton.Click += new System.EventHandler(this.addSubjectButton_Click);
             // 
+            // classNameTextBox
+            // 
+            this.classNameTextBox.Location = new System.Drawing.Point(12, 576);
+            this.classNameTextBox.Name = "classNameTextBox";
+            this.classNameTextBox.Size = new System.Drawing.Size(279, 31);
+            this.classNameTextBox.TabIndex = 11;
+            // 
             // AddClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1395, 676);
+            this.Controls.Add(this.classNameTextBox);
             this.Controls.Add(this.addSubjectButton);
             this.Controls.Add(this.addStudentButton);
             this.Controls.Add(this.removeSubjectButton);
@@ -164,6 +173,7 @@
             this.Name = "AddClassesForm";
             this.Text = "AddClassesForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,5 +190,6 @@
         private Button removeSubjectButton;
         private Button addStudentButton;
         private Button addSubjectButton;
+        private TextBox classNameTextBox;
     }
 }
