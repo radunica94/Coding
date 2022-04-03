@@ -12,7 +12,23 @@ namespace SchoolManagementSystem.Business.DataAccess
     {
         private const string TestFile = "Test.txt";
         private const string TestFile2 = "Test2.txt";
+        private const string SubjectTxt = "Subject.txt";
         public StudentsModel AddStudents(StudentsModel students)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SubjectModel AddSubject(SubjectModel subject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<StudentsModel> GetAllStudents()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<SubjectModel> GetAllSubjects()
         {
             throw new NotImplementedException();
         }

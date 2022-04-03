@@ -11,6 +11,12 @@ namespace SchoolManagementSystem.Business.DataAccess
     public interface IDataConnection
     {
         StudentsModel AddStudents(StudentsModel students);
+        List<StudentsModel> GetAllStudents();
+        SubjectModel AddSubject(SubjectModel subject);
+        List<SubjectModel> GetAllSubjects();
+        void CreateClasses(ClassesModel classes);
+        
+        // Just Testing 
         TestModel TestDB (TestModel test );
         List<TestModel> GetTest();
         TestModel2 Test2DB(TestModel2 test);
