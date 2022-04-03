@@ -9,7 +9,7 @@ namespace SchoolManagementSystem.Business.Models
     public class ClassesModel
     {
         public int Id { get; set; }
-        StudentsModel students { get; set; }
-        SubjectModel subject { get; set; }  
+        public List<StudentsModel> Students { get; set; } = new List<StudentsModel>();
+        public List<SubjectModel> Subject { get; set; } = new List<SubjectModel>();
     }
 }

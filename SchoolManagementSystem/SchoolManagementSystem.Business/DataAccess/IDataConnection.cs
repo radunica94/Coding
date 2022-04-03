@@ -14,8 +14,7 @@ namespace SchoolManagementSystem.Business.DataAccess
         List<StudentsModel> GetAllStudents();
         SubjectModel AddSubject(SubjectModel subject);
         List<SubjectModel> GetAllSubjects();
-        void CreateClasses(ClassesModel classes);
-        
+        ClassesModel CreateClasses(ClassesModel classes);
         // Just Testing 
         TestModel TestDB (TestModel test );
         List<TestModel> GetTest();

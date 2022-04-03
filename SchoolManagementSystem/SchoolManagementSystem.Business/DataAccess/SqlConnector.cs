@@ -54,23 +54,32 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
         }
 
-        public void CreateClasses(ClassesModel classes)
+        public ClassesModel CreateClasses(ClassesModel classes)
         {
             using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
-                SaveStudent(connection, classes);
-                SaveSubject(connection, classes);
+                var p = new DynamicParameters();
+                p.Add("@id",0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spClasses_Insert",p, commandType: CommandType.StoredProcedure);
+
+                classes.Id = p.Get<int>("@id");
+                foreach(StudentsModel student in classes.Students)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@idStudent",student.Id);
+
+                    connection.Execute("dbo.spStudents_Insert", p, commandType: CommandType.StoredProcedure);
+                }
+                foreach(SubjectModel subject in classes.Subject)
+                {
+                    p = new DynamicParameters();
+                    p.Add("idSubject",subject.Id);
+
+                    connection.Execute("dbo.spSubject_Insert", p, commandType: CommandType.StoredProcedure);
+                }
+                return classes;
             }
-        }
-
-        private void SaveStudent(IDbConnection connection, ClassesModel classes)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void SaveSubject(IDbConnection connection, ClassesModel classes)
-        {
-            throw new NotImplementedException();
         }
 
         public List<StudentsModel> GetAllStudents()

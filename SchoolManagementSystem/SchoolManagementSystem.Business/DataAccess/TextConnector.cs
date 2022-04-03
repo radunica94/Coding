@@ -23,6 +23,11 @@ namespace SchoolManagementSystem.Business.DataAccess
             throw new NotImplementedException();
         }
 
+        public ClassesModel CreateClasses(ClassesModel classes)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<StudentsModel> GetAllStudents()
         {
             throw new NotImplementedException();
