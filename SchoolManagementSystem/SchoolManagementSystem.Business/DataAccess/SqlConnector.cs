@@ -67,18 +67,17 @@ namespace SchoolManagementSystem.Business.DataAccess
                 classes.Id = p.Get<int>("@id");
                 foreach(StudentsModel student in classes.Students)
                 {
-                    p = new DynamicParameters();
-                    p.Add("@idStudent",student.Id);
+                    foreach(SubjectModel subject in classes.Subject)
+                    {
+                        p = new DynamicParameters();
+                        p.Add("@idStudent", student.Id);
+                        p.Add("@idClasses", classes.Id);
+                        p.Add("@idSubjects", subject.Id);
 
-                    connection.Execute("dbo.spStudents_Insert", p, commandType: CommandType.StoredProcedure);
+                        connection.Execute("dbo.spCreateClasses_Insert", p, commandType: CommandType.StoredProcedure);
+                    }
                 }
-                foreach(SubjectModel subject in classes.Subject)
-                {
-                    p = new DynamicParameters();
-                    p.Add("idSubject",subject.Id);
-
-                    connection.Execute("dbo.spSubject_Insert", p, commandType: CommandType.StoredProcedure);
-                }
+                
                 return classes;
             }
         }

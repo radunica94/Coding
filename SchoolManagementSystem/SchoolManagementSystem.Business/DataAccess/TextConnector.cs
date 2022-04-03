@@ -17,29 +17,59 @@ namespace SchoolManagementSystem.Business.DataAccess
         private const string ClassesTxt = "Classes.txt";
         public StudentsModel AddStudents(StudentsModel students)
         {
-            throw new NotImplementedException();
+            List<StudentsModel> std = StudentTxt.FullFilePatch().LoadFile().ConvertToStudentModels();
+
+            int currentId = 1;
+            if(std.Count > 0)
+            {
+                currentId = std.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            students.Id = currentId;
+            std.Add(students);
+            std.SaveToStudentsFile(StudentTxt);
+
+            return students;
         }
 
         public SubjectModel AddSubject(SubjectModel subject)
         {
-            throw new NotImplementedException();
+            List<SubjectModel> sbj = SubjectTxt.FullFilePatch().LoadFile().ConvertToSubjectModels();
+
+            int currentId = 1;
+            if (sbj.Count > 0)
+            {
+                currentId = sbj.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            subject.Id = currentId;
+            sbj.Add(subject);
+            sbj.SaveToSubjectsFile(SubjectTxt);
+
+            return subject;
         }
 
         public ClassesModel CreateClasses(ClassesModel classes)
         {
-            // List<StudentsModel> students = ClassesTxt.FullFilePatch().LoadFile().ConvertToClassModels(SubjectTxt,StudentTxt)
-            // TODO - Text for add student add subject and createClasses
-            throw new NotImplementedException();
+            List<ClassesModel> cls = ClassesTxt.FullFilePatch().LoadFile().ConvertToClassModels(SubjectTxt, StudentTxt);
+            int currentId = 1;
+            if(cls.Count > 0)
+            {
+                currentId = cls.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            classes.Id = currentId;
+            cls.Add(classes);
+            cls.SaveToClassesFile(ClassesTxt);
+
+            return classes;
         }
 
         public List<StudentsModel> GetAllStudents()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public List<SubjectModel> GetAllSubjects()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public List<TestModel> GetTest()

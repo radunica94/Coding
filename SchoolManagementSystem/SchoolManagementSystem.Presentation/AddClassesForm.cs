@@ -111,6 +111,8 @@ namespace SchoolManagementSystem.Presentation
             {
                 ClassesModel classes = new ClassesModel();
                 classes.ClassName = classNameTextBox.Text;
+                classes.Students = selectedStudents;
+                classes.Subject = selectedSubjects;
 
                 GlobalConfig.Connection.CreateClasses(classes);
 
