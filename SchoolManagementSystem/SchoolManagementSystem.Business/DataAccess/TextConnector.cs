@@ -62,6 +62,11 @@ namespace SchoolManagementSystem.Business.DataAccess
             return classes;
         }
 
+        public List<StudentsModel> DeleteStudent()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<StudentsModel> GetAllStudents()
         {
             return null;

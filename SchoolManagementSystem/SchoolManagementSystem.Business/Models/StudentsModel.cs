@@ -15,13 +15,7 @@ namespace SchoolManagementSystem.Business.Models
         public string Phone { get; set; }
         public string Grade { get; set; }
         public DateTime Birthday { get; set; }
-
-        public string FullName
-        {
-            get
-            {
-                return $"{FirstName} {LastName}";
-            }
-        }
+        public string Gender { get; set; }
+       
     }
 }

@@ -101,8 +101,6 @@ namespace SchoolManagementSystem.Presentation
                 WireUpList();
 
             }
-
-
         }
 
         private void createClassButton_Click(object sender, EventArgs e)
@@ -124,5 +122,21 @@ namespace SchoolManagementSystem.Presentation
             }
         }
 
+        private void refreshGridButton_Click(object sender, EventArgs e)
+        {
+            WireUpStudentsList();
+        }
+
+        private void studentsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            WireUpStudentsList();
+        }
+
+        private void WireUpStudentsList()
+        {
+            
+            studentsDataGridView.DataSource = availableStudents;
+          
+        }
     }
 }

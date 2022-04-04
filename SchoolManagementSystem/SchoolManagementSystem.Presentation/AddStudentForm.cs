@@ -14,10 +14,13 @@ using System.Windows.Forms;
 namespace SchoolManagementSystem.Presentation
 {
     public partial class AddStudentForm : Form
-    {        
+    {
+        List<StudentsModel> studentsGrid = GlobalConfig.Connection.GetAllStudents();
         public AddStudentForm()
         {
             InitializeComponent();
+
+            WireUpStudentsList();
         }
         //TODO - create the add Student form and test if it works
 
@@ -46,7 +49,7 @@ namespace SchoolManagementSystem.Presentation
             }
 
             return output;
-        }
+        }       
 
         private void addStudentsButton_Click(object sender, EventArgs e)
         {
@@ -59,8 +62,20 @@ namespace SchoolManagementSystem.Presentation
                 students.Phone = phoneTextBox.Text;
                 students.Grade = gradeTextBox.Text;
                 students.Birthday = birthdayDateTimePicker.Value;
+
+                if (maleRadioButton.Checked)
+                {
+                    students.Gender = "Male";
+                }
+                else if (femaleRadioButton.Checked)
+                {
+                    students.Gender = "Female";
+                }
                 
                 GlobalConfig.Connection.AddStudents(students);
+                WireUpStudentsList();
+                
+                
 
                 firstNameTextBox.Text = "";
                 lastNameTextBox.Text = "";
@@ -73,5 +88,20 @@ namespace SchoolManagementSystem.Presentation
                 MessageBox.Show("You need to fill in all the fields! ");
             }
         }
+
+        private void WireUpStudentsList()
+        {
+
+            studentsDataGridView.DataSource = studentsGrid;
+            this.studentsDataGridView.RefreshEdit();
+        }
+
+        private void deleteStudentButton_Click(object sender, EventArgs e)
+        {
+            List<StudentsModel> std = GlobalConfig.Connection.DeleteStudent();
+           
+        }
+
+       
     }
 }

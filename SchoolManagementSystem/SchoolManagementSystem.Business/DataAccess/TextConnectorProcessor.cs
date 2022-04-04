@@ -40,6 +40,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 p.Phone = cols[4];
                 p.Grade = cols[5];
                 p.Birthday = Convert.ToDateTime(cols[6]);
+                p.Gender = cols[7];
               
                 output.Add(p);
             }
@@ -150,7 +151,7 @@ namespace SchoolManagementSystem.Business.DataAccess
 
             foreach (StudentsModel p in models)
             {
-                lines.Add($"{ p.Id },{ p.FirstName },{ p.LastName },{ p.Email },{ p.Phone },{p.Grade},{p.Birthday}");
+                lines.Add($"{ p.Id },{ p.FirstName },{ p.LastName },{ p.Email },{ p.Phone },{p.Grade},{p.Birthday},{p.Gender}");
             }
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }

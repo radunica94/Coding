@@ -12,6 +12,7 @@ namespace SchoolManagementSystem.Business.DataAccess
     {
         StudentsModel AddStudents(StudentsModel students);
         List<StudentsModel> GetAllStudents();
+        List<StudentsModel> DeleteStudent();
         SubjectModel AddSubject(SubjectModel subject);
         List<SubjectModel> GetAllSubjects();
         ClassesModel CreateClasses(ClassesModel classes);

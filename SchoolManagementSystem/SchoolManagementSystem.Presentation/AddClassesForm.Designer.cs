@@ -40,11 +40,14 @@
             this.addStudentButton = new System.Windows.Forms.Button();
             this.addSubjectButton = new System.Windows.Forms.Button();
             this.classNameTextBox = new System.Windows.Forms.TextBox();
+            this.studentsDataGridView = new System.Windows.Forms.DataGridView();
+            this.refreshGridButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // createStudentButton
             // 
-            this.createStudentButton.Location = new System.Drawing.Point(12, 130);
+            this.createStudentButton.Location = new System.Drawing.Point(12, 63);
             this.createStudentButton.Name = "createStudentButton";
             this.createStudentButton.Size = new System.Drawing.Size(154, 34);
             this.createStudentButton.TabIndex = 0;
@@ -54,7 +57,7 @@
             // 
             // createSubjectButton
             // 
-            this.createSubjectButton.Location = new System.Drawing.Point(12, 264);
+            this.createSubjectButton.Location = new System.Drawing.Point(16, 156);
             this.createSubjectButton.Name = "createSubjectButton";
             this.createSubjectButton.Size = new System.Drawing.Size(154, 34);
             this.createSubjectButton.TabIndex = 1;
@@ -68,7 +71,7 @@
             this.studentsListBox.ItemHeight = 25;
             this.studentsListBox.Location = new System.Drawing.Point(328, 24);
             this.studentsListBox.Name = "studentsListBox";
-            this.studentsListBox.Size = new System.Drawing.Size(500, 429);
+            this.studentsListBox.Size = new System.Drawing.Size(500, 79);
             this.studentsListBox.TabIndex = 2;
             // 
             // subjectListBox
@@ -77,7 +80,7 @@
             this.subjectListBox.ItemHeight = 25;
             this.subjectListBox.Location = new System.Drawing.Point(834, 24);
             this.subjectListBox.Name = "subjectListBox";
-            this.subjectListBox.Size = new System.Drawing.Size(500, 429);
+            this.subjectListBox.Size = new System.Drawing.Size(500, 79);
             this.subjectListBox.TabIndex = 3;
             // 
             // createClassButton
@@ -93,7 +96,7 @@
             // studentsComboBox
             // 
             this.studentsComboBox.FormattingEnabled = true;
-            this.studentsComboBox.Location = new System.Drawing.Point(12, 91);
+            this.studentsComboBox.Location = new System.Drawing.Point(12, 24);
             this.studentsComboBox.Name = "studentsComboBox";
             this.studentsComboBox.Size = new System.Drawing.Size(310, 33);
             this.studentsComboBox.TabIndex = 5;
@@ -101,14 +104,14 @@
             // subjectComboBox
             // 
             this.subjectComboBox.FormattingEnabled = true;
-            this.subjectComboBox.Location = new System.Drawing.Point(12, 215);
+            this.subjectComboBox.Location = new System.Drawing.Point(16, 117);
             this.subjectComboBox.Name = "subjectComboBox";
             this.subjectComboBox.Size = new System.Drawing.Size(310, 33);
             this.subjectComboBox.TabIndex = 6;
             // 
             // removeStudentsButton
             // 
-            this.removeStudentsButton.Location = new System.Drawing.Point(654, 459);
+            this.removeStudentsButton.Location = new System.Drawing.Point(654, 117);
             this.removeStudentsButton.Name = "removeStudentsButton";
             this.removeStudentsButton.Size = new System.Drawing.Size(174, 34);
             this.removeStudentsButton.TabIndex = 7;
@@ -118,7 +121,7 @@
             // 
             // removeSubjectButton
             // 
-            this.removeSubjectButton.Location = new System.Drawing.Point(1162, 459);
+            this.removeSubjectButton.Location = new System.Drawing.Point(1162, 116);
             this.removeSubjectButton.Name = "removeSubjectButton";
             this.removeSubjectButton.Size = new System.Drawing.Size(172, 34);
             this.removeSubjectButton.TabIndex = 8;
@@ -128,7 +131,7 @@
             // 
             // addStudentButton
             // 
-            this.addStudentButton.Location = new System.Drawing.Point(168, 130);
+            this.addStudentButton.Location = new System.Drawing.Point(172, 63);
             this.addStudentButton.Name = "addStudentButton";
             this.addStudentButton.Size = new System.Drawing.Size(154, 34);
             this.addStudentButton.TabIndex = 9;
@@ -138,7 +141,7 @@
             // 
             // addSubjectButton
             // 
-            this.addSubjectButton.Location = new System.Drawing.Point(172, 264);
+            this.addSubjectButton.Location = new System.Drawing.Point(176, 156);
             this.addSubjectButton.Name = "addSubjectButton";
             this.addSubjectButton.Size = new System.Drawing.Size(154, 34);
             this.addSubjectButton.TabIndex = 10;
@@ -153,11 +156,34 @@
             this.classNameTextBox.Size = new System.Drawing.Size(279, 31);
             this.classNameTextBox.TabIndex = 11;
             // 
+            // studentsDataGridView
+            // 
+            this.studentsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentsDataGridView.Location = new System.Drawing.Point(328, 276);
+            this.studentsDataGridView.Name = "studentsDataGridView";
+            this.studentsDataGridView.RowHeadersWidth = 62;
+            this.studentsDataGridView.RowTemplate.Height = 33;
+            this.studentsDataGridView.Size = new System.Drawing.Size(1017, 253);
+            this.studentsDataGridView.TabIndex = 12;
+            this.studentsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentsDataGridView_CellContentClick);
+            // 
+            // refreshGridButton
+            // 
+            this.refreshGridButton.Location = new System.Drawing.Point(1218, 535);
+            this.refreshGridButton.Name = "refreshGridButton";
+            this.refreshGridButton.Size = new System.Drawing.Size(127, 34);
+            this.refreshGridButton.TabIndex = 13;
+            this.refreshGridButton.Text = "Refresh";
+            this.refreshGridButton.UseVisualStyleBackColor = true;
+            this.refreshGridButton.Click += new System.EventHandler(this.refreshGridButton_Click);
+            // 
             // AddClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1395, 676);
+            this.Controls.Add(this.refreshGridButton);
+            this.Controls.Add(this.studentsDataGridView);
             this.Controls.Add(this.classNameTextBox);
             this.Controls.Add(this.addSubjectButton);
             this.Controls.Add(this.addStudentButton);
@@ -172,6 +198,7 @@
             this.Controls.Add(this.createStudentButton);
             this.Name = "AddClassesForm";
             this.Text = "AddClassesForm";
+            ((System.ComponentModel.ISupportInitialize)(this.studentsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +218,7 @@
         private Button addStudentButton;
         private Button addSubjectButton;
         private TextBox classNameTextBox;
+        private DataGridView studentsDataGridView;
+        private Button refreshGridButton;
     }
 }

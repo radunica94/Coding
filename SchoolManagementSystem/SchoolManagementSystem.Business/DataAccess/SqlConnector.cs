@@ -26,6 +26,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 p.Add("@Phone", students.Phone);
                 p.Add("@Grade", students.Grade);
                 p.Add("@Birthday", students.Birthday);
+                p.Add("@Gender", students.Gender);
                 p.Add("@id",0,dbType: DbType.Int32,direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spStudents_Insert", p, commandType: CommandType.StoredProcedure);
@@ -80,6 +81,16 @@ namespace SchoolManagementSystem.Business.DataAccess
                 
                 return classes;
             }
+        }
+
+        public List<StudentsModel> DeleteStudent()
+        {
+            List<StudentsModel> std;
+            using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                std = connection.Query<StudentsModel>("dbo.spStudents_Delete").ToList();
+            }
+            return std;
         }
 
         public List<StudentsModel> GetAllStudents()

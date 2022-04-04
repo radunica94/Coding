@@ -33,3 +33,4 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\n
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\Microsoft.Office.Interop.Excel.dll
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddClassesForm.resources
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddSubjectForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.CreateClassForm.resources
