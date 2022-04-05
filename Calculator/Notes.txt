@@ -1,0 +1,1 @@
+- salveaza calculele in memorie 

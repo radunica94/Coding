@@ -1,0 +1,12 @@
+C:\Coding\Calculator\Claculator.Business\bin\Debug\net6.0\Claculator.Business.deps.json
+C:\Coding\Calculator\Claculator.Business\bin\Debug\net6.0\Claculator.Business.dll
+C:\Coding\Calculator\Claculator.Business\bin\Debug\net6.0\Claculator.Business.pdb
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.csproj.AssemblyReference.cache
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.AssemblyInfoInputs.cache
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.AssemblyInfo.cs
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.csproj.CoreCompileInputs.cache
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.dll
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\refint\Claculator.Business.dll
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\Claculator.Business.pdb
+C:\Coding\Calculator\Claculator.Business\obj\Debug\net6.0\ref\Claculator.Business.dll
