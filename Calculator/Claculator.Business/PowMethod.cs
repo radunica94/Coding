@@ -19,5 +19,11 @@ namespace Calculator.Business
             double result = Math.Pow(x, y);
             return result;
         }
+        public double Pow3(double x)
+        {
+            double y = 3;
+            double result = Math.Pow(x, y);
+            return result;
+        }
     }
 }
