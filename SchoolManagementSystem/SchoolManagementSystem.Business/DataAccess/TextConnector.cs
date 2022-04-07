@@ -67,6 +67,11 @@ namespace SchoolManagementSystem.Business.DataAccess
             throw new NotImplementedException();
         }
 
+        public StudentsModel DeleteStudent(StudentsModel students)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<StudentsModel> GetAllStudents()
         {
             return null;
@@ -118,6 +123,11 @@ namespace SchoolManagementSystem.Business.DataAccess
             tests.SaveToTestFile(TestFile);
 
             return test;
+        }
+
+        public StudentsModel UpdateStudents(StudentsModel students)
+        {
+            throw new NotImplementedException();
         }
     }
 }

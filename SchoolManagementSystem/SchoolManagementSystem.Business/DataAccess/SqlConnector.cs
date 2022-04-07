@@ -36,7 +36,22 @@ namespace SchoolManagementSystem.Business.DataAccess
                 return students;
             }
         }
+        public StudentsModel DeleteStudent(StudentsModel students)
+        {
 
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spStudents_Delete", p, commandType: CommandType.StoredProcedure);
+
+                students.Id = p.Get<int>("@id");
+
+                return students;
+            }
+        }
+        
         public SubjectModel AddSubject(SubjectModel subject)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
@@ -82,16 +97,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 return classes;
             }
         }
-
-        public List<StudentsModel> DeleteStudent()
-        {
-            List<StudentsModel> std;
-            using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
-            {
-                std = connection.Query<StudentsModel>("dbo.spStudents_Delete").ToList();
-            }
-            return std;
-        }
+               
 
         public List<StudentsModel> GetAllStudents()
         {
@@ -155,6 +161,29 @@ namespace SchoolManagementSystem.Business.DataAccess
 
                 return test;
            }
+        }
+
+        public StudentsModel UpdateStudents(StudentsModel students)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                
+                p.Add("@FirstName", students.FirstName);
+                p.Add("@LastName", students.LastName);
+                p.Add("@Email", students.Email);
+                p.Add("@Phone", students.Phone);
+                p.Add("@Grade", students.Grade);
+                p.Add("@Birthday", students.Birthday);
+                p.Add("@Gender", students.Gender);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spStudents_Update", p, commandType: CommandType.StoredProcedure);
+
+                students.Id = p.Get<int>("@id");
+
+                return students;
+            }
         }
     }
 }

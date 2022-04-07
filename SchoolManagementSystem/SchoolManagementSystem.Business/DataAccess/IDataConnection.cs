@@ -11,8 +11,9 @@ namespace SchoolManagementSystem.Business.DataAccess
     public interface IDataConnection
     {
         StudentsModel AddStudents(StudentsModel students);
+        StudentsModel UpdateStudents(StudentsModel students);
         List<StudentsModel> GetAllStudents();
-        List<StudentsModel> DeleteStudent();
+        StudentsModel DeleteStudent(StudentsModel students);
         SubjectModel AddSubject(SubjectModel subject);
         List<SubjectModel> GetAllSubjects();
         ClassesModel CreateClasses(ClassesModel classes);

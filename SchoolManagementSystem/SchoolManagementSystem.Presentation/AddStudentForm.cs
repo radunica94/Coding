@@ -15,93 +15,130 @@ namespace SchoolManagementSystem.Presentation
 {
     public partial class AddStudentForm : Form
     {
-        List<StudentsModel> studentsGrid = GlobalConfig.Connection.GetAllStudents();
+        List<StudentsModel> studentsList = GlobalConfig.Connection.GetAllStudents();
+        StudentsModel students = new StudentsModel();
+
+        int indexRow;
         public AddStudentForm()
         {
             InitializeComponent();
 
-            WireUpStudentsList();
+            // TODO - material skin manager
+
+            
         }
-        //TODO - create the add Student form and test if it works
 
-        private bool ValidateForm()
+        private void AddStudentForm_Load(object sender, EventArgs e)
         {
-            bool output = true;
-            if (firstNameTextBox.Text.Length == 0) 
-            {
-                output = false;
-            }
-            if (lastNameTextBox.Text.Length == 0)
-            {
-                output = false;
-            }
-            if (emailTextBox.Text.Length == 0)
-            {
-                output = false;
-            }
-            if (phoneTextBox.Text.Length == 0)
-            {
-                output = false;
-            }
-            if (gradeTextBox.Text.Length == 0)
-            {
-                output = false;
-            }
+           
 
-            return output;
         }       
+       
+
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in studentsListView.Items)
+            {
+                if (item.Selected)
+                {
+                    studentsListView.Items.Remove(item);
+                    GlobalConfig.Connection.DeleteStudent(students);
+                }
+               
+            }
+        }
+
+        private void studentsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //indexRow = e.RowIndex;
+            //DataGridViewRow row = studentsDataGridView.Rows[indexRow];
+
+            //students.Id = Convert.ToInt32(row.Cells[0].Value);
+            //firstNameTextBox.Text = row.Cells[1].Value.ToString();
+            //lastNameTextBox.Text = row.Cells[2].Value.ToString();
+            //emailTextBox.Text = row.Cells[3].Value.ToString();
+            //phoneTextBox.Text = row.Cells[4].Value.ToString();
+            //gradeTextBox.Text = row.Cells[5].Value.ToString();
+            //birthdayDateTimePicker.Value = Convert.ToDateTime(row.Cells[6].Value);
+            //if (row.Cells[7].Value.ToString() == "Male")
+            //{
+            //    maleRadioButton.Checked = true;
+            //}
+            //else if (row.Cells[7].Value.ToString() == "Female")
+            //{
+            //    femaleRadioButton.Checked = true;
+            //}
+
+
+
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            //StudentsModel std = new StudentsModel();
+            //DataGridViewRow newDatRow = studentsDataGridView.Rows[indexRow];
+            //newDatRow.Cells[0].Value = students.Id;
+            //newDatRow.Cells[1].Value = firstNameTextBox.Text;
+            //newDatRow.Cells[2].Value = lastNameTextBox.Text;
+            //newDatRow.Cells[3].Value = emailTextBox.Text;
+            //newDatRow.Cells[4].Value = phoneTextBox.Text;
+            //newDatRow.Cells[5].Value = gradeTextBox.Text;
+            //newDatRow.Cells[6].Value = birthdayDateTimePicker.Value;
+            //if (maleRadioButton.Checked)
+            //{
+            //    newDatRow.Cells[7].Value = "Male";
+            //}             
+            //else if(femaleRadioButton.Checked)
+            //{
+            //    newDatRow.Cells[7].Value = "Female";        
+            //}
+
+
+
+            //GlobalConfig.Connection.UpdateStudents(students);
+            //WireUpStudentsList();
+
+        }
+
+        private void studentsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        
 
         private void addStudentsButton_Click(object sender, EventArgs e)
         {
-            if (ValidateForm())
-            {
-                StudentsModel students = new StudentsModel();
-                students.FirstName = firstNameTextBox.Text;
-                students.LastName = lastNameTextBox.Text;
-                students.Email = emailTextBox.Text;
-                students.Phone = phoneTextBox.Text;
-                students.Grade = gradeTextBox.Text;
-                students.Birthday = birthdayDateTimePicker.Value;
-
-                if (maleRadioButton.Checked)
-                {
-                    students.Gender = "Male";
-                }
-                else if (femaleRadioButton.Checked)
-                {
-                    students.Gender = "Female";
-                }
-                
-                GlobalConfig.Connection.AddStudents(students);
-                WireUpStudentsList();
-                
-                
-
-                firstNameTextBox.Text = "";
-                lastNameTextBox.Text = "";
-                emailTextBox.Text = "";
-                phoneTextBox.Text = "";
-                gradeTextBox.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("You need to fill in all the fields! ");
-            }
+            AddStudentEventForm stdEvent = new AddStudentEventForm();
+            stdEvent.ShowDialog();
         }
 
-        private void WireUpStudentsList()
+        private void studentsDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-
-            studentsDataGridView.DataSource = studentsGrid;
-            this.studentsDataGridView.RefreshEdit();
-        }
-
-        private void deleteStudentButton_Click(object sender, EventArgs e)
-        {
-            List<StudentsModel> std = GlobalConfig.Connection.DeleteStudent();
            
         }
 
        
-    }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            List<StudentsModel> students = GlobalConfig.Connection.GetAllStudents();
+            studentsListView.Items.Clear();
+            foreach (StudentsModel std in students)
+            {
+                ListViewItem item = new ListViewItem(std.Id.ToString());
+                item.SubItems.Add(std.FirstName);
+                item.SubItems.Add(std.LastName);
+                item.SubItems.Add(std.Email);
+                item.SubItems.Add(std.Phone);
+                item.SubItems.Add(std.Grade);
+                item.SubItems.Add(std.Birthday.ToShortDateString());
+                item.SubItems.Add(std.Gender);
+
+                studentsListView.Items.Add(item);
+            }            
+                
+        }
+    } 
 }
