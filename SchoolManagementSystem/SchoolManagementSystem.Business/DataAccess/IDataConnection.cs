@@ -1,10 +1,4 @@
 ﻿using SchoolManagementSystem.Business.Models;
-using SchoolManagementSystem.Business.Models.TestModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Business.DataAccess
 {
@@ -14,12 +8,9 @@ namespace SchoolManagementSystem.Business.DataAccess
         StudentsModel UpdateStudents(StudentsModel students);
         List<StudentsModel> GetAllStudents();
         StudentsModel DeleteStudent(StudentsModel students);
-        SubjectModel AddSubject(SubjectModel subject);
-        List<SubjectModel> GetAllSubjects();
-        ClassesModel CreateClasses(ClassesModel classes);
-        // Just Testing 
-        TestModel TestDB (TestModel test );
-        List<TestModel> GetTest();
-        TestModel2 Test2DB(TestModel2 test);
+        UsersModel AddUsers(UsersModel users);
+        List<UsersModel> LoginAsAdmin();
+        List<UsersModel> LoginAsStudent();
+        List<UsersModel> LoginAsTeacher();
     }
 }

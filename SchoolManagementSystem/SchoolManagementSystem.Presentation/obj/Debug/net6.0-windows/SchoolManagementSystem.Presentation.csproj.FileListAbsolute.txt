@@ -5,7 +5,6 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\n
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Presentation.pdb
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.csproj.AssemblyReference.cache
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddStudentForm.resources
-C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.MainForm.resources
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.csproj.GenerateResource.cache
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.GeneratedMSBuildEditorConfig.editorconfig
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AssemblyInfoInputs.cache
@@ -27,11 +26,12 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\n
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Business.dll
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\SchoolManagementSystem.Business.pdb
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.csproj.CopyComplete
-C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.TestForm.resources
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\itextsharp.dll
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\bin\Debug\net6.0-windows\Microsoft.Office.Interop.Excel.dll
-C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddClassesForm.resources
-C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddSubjectForm.resources
-C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.CreateClassForm.resources
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddStudentEventForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddUsersForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.LoginForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.MainAdminForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.MainStudentForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.MainTeacherForm.resources

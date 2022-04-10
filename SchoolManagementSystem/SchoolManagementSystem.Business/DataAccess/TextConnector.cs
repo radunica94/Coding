@@ -1,26 +1,17 @@
 ﻿using SchoolManagementSystem.Business.Models;
-using SchoolManagementSystem.Business.Models.TestModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SchoolManagementSystem.Business.DataAccess
 {
     public class TextConnector : IDataConnection
-    {
-        private const string TestFile = "Test.txt";
-        private const string TestFile2 = "Test2.txt";
-        private const string SubjectTxt = "Subject.txt";
+    {      
         private const string StudentTxt = "Student.txt";
-        private const string ClassesTxt = "Classes.txt";
+        private const string UserTxt = "User.txt";
         public StudentsModel AddStudents(StudentsModel students)
         {
             List<StudentsModel> std = StudentTxt.FullFilePatch().LoadFile().ConvertToStudentModels();
 
             int currentId = 1;
-            if(std.Count > 0)
+            if (std.Count > 0)
             {
                 currentId = std.OrderByDescending(x => x.Id).First().Id + 1;
             }
@@ -31,40 +22,20 @@ namespace SchoolManagementSystem.Business.DataAccess
             return students;
         }
 
-        public SubjectModel AddSubject(SubjectModel subject)
+        public UsersModel AddUsers(UsersModel users)
         {
-            List<SubjectModel> sbj = SubjectTxt.FullFilePatch().LoadFile().ConvertToSubjectModels();
+            List<UsersModel> usr = UserTxt.FullFilePatch().LoadFile().ConvertToUsersModels();
 
             int currentId = 1;
-            if (sbj.Count > 0)
+            if (usr.Count > 0)
             {
-                currentId = sbj.OrderByDescending(x => x.Id).First().Id + 1;
+                currentId = usr.OrderByDescending(x => x.Id).First().Id + 1;
             }
-            subject.Id = currentId;
-            sbj.Add(subject);
-            sbj.SaveToSubjectsFile(SubjectTxt);
+            users.Id = currentId;
+            usr.Add(users);
+            usr.SaveToUsersFile(UserTxt);
 
-            return subject;
-        }
-
-        public ClassesModel CreateClasses(ClassesModel classes)
-        {
-            List<ClassesModel> cls = ClassesTxt.FullFilePatch().LoadFile().ConvertToClassModels(SubjectTxt, StudentTxt);
-            int currentId = 1;
-            if(cls.Count > 0)
-            {
-                currentId = cls.OrderByDescending(x => x.Id).First().Id + 1;
-            }
-            classes.Id = currentId;
-            cls.Add(classes);
-            cls.SaveToClassesFile(ClassesTxt);
-
-            return classes;
-        }
-
-        public List<StudentsModel> DeleteStudent()
-        {
-            throw new NotImplementedException();
+            return users;
         }
 
         public StudentsModel DeleteStudent(StudentsModel students)
@@ -74,55 +45,22 @@ namespace SchoolManagementSystem.Business.DataAccess
 
         public List<StudentsModel> GetAllStudents()
         {
-            return null;
+            throw new NotImplementedException();
         }
 
-        public List<SubjectModel> GetAllSubjects()
+        public List<UsersModel> LoginAsAdmin()
         {
-            return null;
+            throw new NotImplementedException();
         }
 
-        public List<TestModel> GetTest()
+        public List<UsersModel> LoginAsStudent()
         {
-            return null;
+            throw new NotImplementedException();
         }
 
-        public TestModel2 Test2DB(TestModel2 test)
+        public List<UsersModel> LoginAsTeacher()
         {
-            List<TestModel2> tests = TestFile2.FullFilePatch().LoadFile().ConvertToTest2Models();
-
-            int currentId = 1;
-            if (tests.Count > 0)
-            {
-                currentId = tests.OrderByDescending(x => x.Id).First().Id + 1;
-            }
-            test.Id = currentId;
-
-            tests.Add(test);
-
-            ////Save the list<string> to the text file
-            tests.SaveToTest2File(TestFile);
-
-            return test;
-        }
-
-        public TestModel TestDB(TestModel test)
-        {
-            List<TestModel> tests = TestFile.FullFilePatch().LoadFile().ConvertToTestModels();
-                        
-            int currentId = 1;
-            if (tests.Count > 0)
-            {
-                currentId = tests.OrderByDescending(x => x.Id).First().Id + 1;
-            }
-            test.Id = currentId;
-            
-            tests.Add(test);
-
-            ////Save the list<string> to the text file
-            tests.SaveToTestFile(TestFile);
-
-            return test;
+            throw new NotImplementedException();
         }
 
         public StudentsModel UpdateStudents(StudentsModel students)

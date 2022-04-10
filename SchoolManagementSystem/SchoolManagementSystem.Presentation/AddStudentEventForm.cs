@@ -14,9 +14,8 @@ namespace SchoolManagementSystem.Presentation
 {
     public partial class AddStudentEventForm : Form
     {
-        List<StudentsModel> studentsGrid = GlobalConfig.Connection.GetAllStudents();
-        StudentsModel students = new StudentsModel();
-        int indexRow;
+       
+        
         public AddStudentEventForm()
         {
             InitializeComponent();

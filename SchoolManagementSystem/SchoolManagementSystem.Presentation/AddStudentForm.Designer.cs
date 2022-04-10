@@ -32,6 +32,7 @@
             this.removeButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.studentsListView = new System.Windows.Forms.ListView();
+            this.Id = new System.Windows.Forms.ColumnHeader();
             this.FirstName = new System.Windows.Forms.ColumnHeader();
             this.LastName = new System.Windows.Forms.ColumnHeader();
             this.Email = new System.Windows.Forms.ColumnHeader();
@@ -60,7 +61,7 @@
             this.removeButton.TabIndex = 17;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
-            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            
             // 
             // updateButton
             // 
@@ -70,11 +71,12 @@
             this.updateButton.TabIndex = 18;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            
             // 
             // studentsListView
             // 
             this.studentsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
             this.FirstName,
             this.LastName,
             this.Email,
@@ -85,12 +87,17 @@
             this.studentsListView.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.studentsListView.FullRowSelect = true;
             this.studentsListView.GridLines = true;
-            this.studentsListView.Location = new System.Drawing.Point(12, 34);
+            this.studentsListView.Location = new System.Drawing.Point(28, 12);
             this.studentsListView.Name = "studentsListView";
-            this.studentsListView.Size = new System.Drawing.Size(1406, 502);
+            this.studentsListView.Size = new System.Drawing.Size(1489, 502);
             this.studentsListView.TabIndex = 19;
             this.studentsListView.UseCompatibleStateImageBehavior = false;
             this.studentsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            this.Id.Width = 70;
             // 
             // FirstName
             // 
@@ -150,7 +157,6 @@
             this.Name = "AddStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStudentForm";
-            this.Load += new System.EventHandler(this.AddStudentForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -168,5 +174,6 @@
         private ColumnHeader Birthday;
         private ColumnHeader Gender;
         private Button loadButton;
+        private ColumnHeader Id;
     }
 }

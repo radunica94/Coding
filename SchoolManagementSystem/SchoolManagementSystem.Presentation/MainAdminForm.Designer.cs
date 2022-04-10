@@ -1,6 +1,6 @@
 ﻿namespace SchoolManagementSystem.Presentation
 {
-    partial class CreateClassForm
+    partial class MainAdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // CreateClassForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 692);
-            this.Name = "CreateClassForm";
-            this.Text = "CreateClassForm";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "MainAdminForm";
         }
 
         #endregion
