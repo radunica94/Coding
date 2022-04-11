@@ -8,3 +8,4 @@ C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformati
 C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.pdb
 C:\Coding\RegasireaInformatiei\RegasireaInformatiei\bin\Debug\Annytab.Stemmer.dll
 C:\Coding\RegasireaInformatiei\RegasireaInformatiei\obj\Debug\RegasireaInformatiei.csproj.CopyComplete
+C:\Coding\RegasireaInformatiei\RegasireaInformatiei\bin\Debug\StemmersNet.dll

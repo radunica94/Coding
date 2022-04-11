@@ -30,3 +30,17 @@ TV,television
 US,United States
 CNBC,Consumer News and Business Channel
 3-D,three dimensions or three-dimensional
+Inc.,Incorporated
+usa:,united states america:
+Jan,January
+Feb,February
+Mar,March
+Apr,April
+May,May
+Jun,June
+Jul,July
+Aug,August
+Sep,September
+Oct,October
+Nov,November
+Dec,December

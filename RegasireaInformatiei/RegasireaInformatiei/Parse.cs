@@ -11,10 +11,11 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
+
 namespace RegasireaInformatiei
 {
-    public class Parse
-    {
+    public class Parse   {
+
 
         static public void Main(String[] args)
         {
@@ -28,10 +29,13 @@ namespace RegasireaInformatiei
                 xmlDocument.Load(xmlPath);
                 xmlDocuments.Add(xmlDocument);
             }
+
             List<string> titles = new List<string>();
             List<string> texts = new List<string>();
             List<string> codes = new List<string>();
             List<string> acronimList = new List<string>();
+            List<string> uniqueWords = new List<string>();
+            List<string> steams = new List<string>();
 
             for (int i = 0; i < xmlDocuments.Count; i++)
             {
@@ -47,28 +51,64 @@ namespace RegasireaInformatiei
             //Pentru afisarea unei liste care contine acronimele
             acronimList.AddRange(Acronime(titles));
             acronimList.AddRange(Acronime(texts));
-            for (int i = 0; i < acronimList.Count; i++)
-            {
-                //Console.WriteLine(acronimList[i]);                 
-            }
+            //for (int i = 0; i < acronimList.Count; i++)
+            //{
+            //    Console.WriteLine(acronimList[i]);
+            //}
             StopWords(texts);
             // Pentru afisarea unei liste de articole care contine titlul + textul
 
             titles = LowerCase(ReplaceAcronyms(titles));
             texts = LowerCase(ReplaceAcronyms(texts));
-            for (int i = 0; i < titles.Count; i++)
-            {
-                Console.WriteLine("Article " + i + ":\n");
-                Console.WriteLine(titles[i] + "\n");
-                Console.WriteLine(texts[i] + "\n\n\n");
-            }
+            //for (int i = 0; i < titles.Count; i++)
+            //{
+            //    Console.WriteLine("Article " + i + ":\n");
+            //    Console.WriteLine(titles[i] + "\n");
+            //    Console.WriteLine(texts[i] + "\n\n\n");
+            //}
 
             // Unique words
+            // Save unique words in a txt file
+            uniqueWords.AddRange(titles);
+            uniqueWords.AddRange(texts);
+
+            steams.AddRange(GetStems(StopWords(titles)));
+            steams.AddRange(GetStems(StopWords(texts)));
             
-            //IEnumerable<string> allWords = titles.Split(' ').;
-            //IEnumerable<string> uniqueWords = allWords.GroupBy(w => w).Where(g => g.Count() == 1).Select(g => g.Key);
+            
+            GetUniqueWords(uniqueWords);
+
+
+            List<string> output = GetUniqueWords(uniqueWords);
+            //for (int i = 0; i < output.Count; i++)
+            //{
+            //    Console.WriteLine(output[i]);
+            //}
+
+            // Stemmer
+           
+
+
 
             Console.ReadLine();
+        }
+        
+        private static List<string> GetStems(List<string> text)
+        {
+            foreach (var line in text)
+            {
+                var words = line.Split(' ').ToList();
+                foreach(var word in words)
+                {
+                    var x = new EnglishStemmer();
+                    var stem = x.GetSteamWord(word);
+                    if (!string.IsNullOrEmpty(stem))
+                    {
+                        line.Replace(word, stem);
+                    }
+                }
+            }
+            return text;
         }
         
         private static List<string> Acronime(List<string> text)
@@ -81,6 +121,12 @@ namespace RegasireaInformatiei
 
             return acronime;
         }
+
+
+
+
+        
+
         private static List<string> ReplaceAcronyms(List<string> text)
         {
             var x = new AcronymsDictionary("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\acronime.txt");
@@ -101,8 +147,8 @@ namespace RegasireaInformatiei
                 }
             }            
             return text;
-        }
-        // TODO - Replace "Prescurtari"       
+        }       
+        
 
         private static List<string> LowerCase(List<string> text)
         {
@@ -115,12 +161,17 @@ namespace RegasireaInformatiei
         }
         private static List<string> FilterWords(string str)
         {
-            var upper = str.Split(' ').Where(s=> String.Equals(s,s.ToUpper(),StringComparison.Ordinal));
+            var split = str.Split(' ');
+            var upper = split.Where(s=> String.Equals(s,s.ToUpper(),StringComparison.Ordinal)).ToList();
             Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-            upper = upper.Select(s=> rgx.Replace(s, ""));
-            return upper.ToList();
+            upper = upper.Select(s => rgx.Replace(s, "")).ToList();
+            Regex rgx2 = new Regex(@"\b[a-zA-Z]{3}\.*\:*\ {1}");
+            var x = rgx2.Matches(str).Cast<Match>().Select(m => m.Value.TrimEnd()).ToList();
+            upper.AddRange(x);
+            return upper;
         }
-        private static string StopWords(List<string> texts)
+
+        private static List<string> StopWords(List<string> texts)
         {
             List<string> stopWords = File.ReadAllLines("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\stopwordList.txt").ToList();
             for(int i = 0; i < texts.Count; i++)
@@ -129,14 +180,44 @@ namespace RegasireaInformatiei
                 {
                     texts[i] = texts[i].Replace(" " + stopWords[j] + " ", " ");
                 }
-                //Console.WriteLine(texts[i]);
             }            
-            return null;
+            return texts;
         }
-        // TODO - inlocuire de prescurtari
-        // TODO - un txt cu toate cuvintele unice din lista finala si numerotate
-        // TODO - sa fac o functie in care sa transcriu toate metodele folosite pentru prelucra textul
-        // TODO - salveaza listele intr-un dictionar global pentru a putea lua indexul fiecarui cuvant(numarul de aparitii , unice)
-        // TODO - fiecare cuvant il salvez intr-un dictionar, si specific numarul de aparitii : Dictionary<string,int> - aparitii unice
+       
+        public static List<string> GetUniqueWords(List<string> text)
+        {
+            Dictionary<string, List<Articol>> articole = new Dictionary<string, List<Articol>>();
+            var uniqueWords = new List<string>();    
+            
+            for(int i = 0; i < text.Count; i++)
+            {
+                var split = text[i].Split(' ');
+                foreach(string word in split)
+                {
+                    if (articole.ContainsKey(word))
+                    {
+                        articole.TryGetValue(word, out List<Articol> articol);
+                        var x = articol.Where(a => a.Index == i);
+                        if (x.Any())
+                        {
+                            x.Count();
+                        }
+                        else
+                        {
+                            
+                        }
+                        articole[word].Add(new Articol(i, 0));
+                    }
+                    else
+                    {
+                        articole.Add(word, new List<Articol>());
+                        articole[word].Add(new Articol(i, word));
+                    }
+                    if (text[i].Contains(word)) { uniqueWords.Add(word); break; }
+                }
+            }
+            return text;
+        }            
+
     }
 }

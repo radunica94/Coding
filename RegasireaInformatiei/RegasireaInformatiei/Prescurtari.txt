@@ -1,4 +1,4 @@
-﻿INC.,Incorporated
+﻿Inc.,Incorporated
 usa,united states america
 Jan,January
 Feb,February
