@@ -89,7 +89,57 @@ namespace SchoolManagementSystem.Business.DataAccess
             return output;
         }
 
+        public static List<SubjectModel> ConvertToSubjectModels(this List<string> lines, string userFileName)
+        {
+            List<SubjectModel> output = new List<SubjectModel>();
+            List<UsersModel> users = userFileName.FullFilePatch().LoadFile().ConvertToUsersModels();
+            foreach(string line in lines)
+            {
+                string[] cols = line.Split(',');
 
+                SubjectModel s = new SubjectModel();
+                s.Id = int.Parse(cols[0]);
+                s.SubjectName = cols[1];
+                s.Year = int.Parse(cols[2]);
+                s.Semester = int.Parse(cols[3]);
+
+                string[] userIds = cols[4].Split('|');
+
+                foreach (string userId in userIds)
+                {
+                    s.Teachers.Add(users.Find(x => x.Id == int.Parse(userId)));
+                }
+
+                output.Add(s);
+            }
+            return output;
+        }
+
+        public static void SaveToSubjectFile(this List<SubjectModel> subjects, string fileName)
+        {
+            List<string> lines = new List<string>();
+            foreach (SubjectModel s in subjects)
+            {
+                lines.Add($"{s.Id},{s.SubjectName},{s.Year},{s.Semester},{ConvertSubjectListToString(s.Teachers)}");
+            }
+            File.WriteAllLines(fileName.FullFilePatch(), lines);
+        }
+
+        private static string ConvertSubjectListToString(List<UsersModel> users)
+        {
+            string output = "";
+            if (users.Count == 0)
+            {
+                return "";
+            }
+            foreach (UsersModel u in users)
+            {
+                output += $"{u.Id}|";
+            }
+            output = output.Substring(0, output.Length - 1);
+            return output;
+        }
+        
         public static void SaveToStudentsFile(this List<StudentsModel> models, string fileName)
         {
             List<string> lines = new List<string>();

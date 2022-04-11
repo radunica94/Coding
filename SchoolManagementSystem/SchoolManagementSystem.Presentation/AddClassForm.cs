@@ -10,19 +10,17 @@ using System.Windows.Forms;
 
 namespace SchoolManagementSystem.Presentation
 {
-    public partial class MainAdminForm : Form
+    public partial class AddClassForm : Form
     {
-        public MainAdminForm()
+        public AddClassForm()
         {
             InitializeComponent();
         }
 
-        private void userButton_Click(object sender, EventArgs e)
+        private void addSubjectLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AddUsersForm addUser = new AddUsersForm();
-            addUser.Show();
+            AddSubjectForm addSubject = new AddSubjectForm();
+            addSubject.ShowDialog();
         }
-
-        
     }
 }

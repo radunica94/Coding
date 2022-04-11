@@ -16,5 +16,11 @@ namespace SchoolManagementSystem.Presentation
         {
             InitializeComponent();
         }
+
+        private void addClass_Click(object sender, EventArgs e)
+        {
+            AddClassForm addClass = new AddClassForm();
+            addClass.Show();
+        }
     }
 }

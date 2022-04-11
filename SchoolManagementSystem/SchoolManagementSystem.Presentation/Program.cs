@@ -22,7 +22,7 @@ namespace SchoolManagementSystem.Presentation
             //SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
             SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.Sql);
 
-            Application.Run(new LoginForm());
+            Application.Run(new AddSubjectForm());
         }
     }
 }

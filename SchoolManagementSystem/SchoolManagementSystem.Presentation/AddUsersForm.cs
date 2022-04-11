@@ -82,7 +82,7 @@ namespace SchoolManagementSystem.Presentation
             {
                 output = false;
             }
-            return true;
+            return output;
         }
     }
 }

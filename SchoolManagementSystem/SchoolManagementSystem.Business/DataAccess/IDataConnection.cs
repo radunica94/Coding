@@ -12,5 +12,7 @@ namespace SchoolManagementSystem.Business.DataAccess
         List<UsersModel> LoginAsAdmin();
         List<UsersModel> LoginAsStudent();
         List<UsersModel> LoginAsTeacher();
+
+        SubjectModel CreateSubject(SubjectModel subject);
     }
 }

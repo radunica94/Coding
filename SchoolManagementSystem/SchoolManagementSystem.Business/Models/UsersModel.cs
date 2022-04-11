@@ -16,5 +16,7 @@
         public DateTime Birthday { get; set; }
         public string? Apartment { get; set; }
         public string? ZipCode { get; set; }
+
+        public string? FullName => $"{FirstName} {LastName}";
     }
 }

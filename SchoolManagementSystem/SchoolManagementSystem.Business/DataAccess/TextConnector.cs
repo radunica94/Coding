@@ -6,6 +6,7 @@ namespace SchoolManagementSystem.Business.DataAccess
     {      
         private const string StudentTxt = "Student.txt";
         private const string UserTxt = "User.txt";
+        private const string SubjectTxt = "Subject.txt";
         public StudentsModel AddStudents(StudentsModel students)
         {
             List<StudentsModel> std = StudentTxt.FullFilePatch().LoadFile().ConvertToStudentModels();
@@ -38,6 +39,24 @@ namespace SchoolManagementSystem.Business.DataAccess
             return users;
         }
 
+        public SubjectModel CreateSubject(SubjectModel subject)
+        {
+            List<SubjectModel> subj = SubjectTxt.FullFilePatch().LoadFile().ConvertToSubjectModels(UserTxt);
+
+            int currentId = 1;
+            if (subj.Count > 0)
+            {
+                currentId = subj.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            subject.Id = currentId;
+            subj.Add(subject);
+            subj.SaveToSubjectFile(SubjectTxt);
+            return subject;
+        }
+
+       
+        
+
         public StudentsModel DeleteStudent(StudentsModel students)
         {
             throw new NotImplementedException();
@@ -60,7 +79,7 @@ namespace SchoolManagementSystem.Business.DataAccess
 
         public List<UsersModel> LoginAsTeacher()
         {
-            throw new NotImplementedException();
+            return UserTxt.FullFilePatch().LoadFile().ConvertToUsersModels();
         }
 
         public StudentsModel UpdateStudents(StudentsModel students)

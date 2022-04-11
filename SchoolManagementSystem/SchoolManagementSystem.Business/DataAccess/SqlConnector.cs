@@ -58,6 +58,33 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
         }
 
+        public SubjectModel CreateSubject(SubjectModel subject)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@SubjectName", subject.SubjectName);
+                p.Add("@Year", subject.Year);
+                p.Add("@Semester", subject.Semester);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spSubject_Insert", p, commandType: CommandType.StoredProcedure);
+
+                subject.Id = p.Get<int>("@id");
+
+                foreach (UsersModel um in subject.Teachers)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@SubjectId", subject.Id);
+                    p.Add("@UsersId", um.Id);
+
+                    connection.Execute("dbo.spCreateSubject_Insert", p, commandType: CommandType.StoredProcedure);
+                }
+
+                return subject;
+            }
+        }
+
         public StudentsModel DeleteStudent(StudentsModel students)
         {
 

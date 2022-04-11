@@ -5,9 +5,9 @@ namespace SchoolManagementSystem.Presentation
 {
     public partial class LoginForm : Form
     {
-        private List<UsersModel> getAdmin = GlobalConfig.Connection.LoginAsAdmin();
-        private List<UsersModel> getTeacher = GlobalConfig.Connection.LoginAsTeacher();
-        private List<UsersModel> getStudent = GlobalConfig.Connection.LoginAsStudent();
+        private readonly List<UsersModel> getAdmin = GlobalConfig.Connection.LoginAsAdmin();
+        private readonly List<UsersModel> getTeacher = GlobalConfig.Connection.LoginAsTeacher();
+        private readonly List<UsersModel> getStudent = GlobalConfig.Connection.LoginAsStudent();
         private UsersModel user = new UsersModel();
         public LoginForm()
         {

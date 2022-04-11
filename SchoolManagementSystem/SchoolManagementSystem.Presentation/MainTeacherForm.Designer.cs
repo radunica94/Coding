@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.addClass = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // addClass
+            // 
+            this.addClass.Location = new System.Drawing.Point(0, 0);
+            this.addClass.Name = "addClass";
+            this.addClass.Size = new System.Drawing.Size(163, 34);
+            this.addClass.TabIndex = 0;
+            this.addClass.Text = "Create Class";
+            this.addClass.UseVisualStyleBackColor = true;
+            this.addClass.Click += new System.EventHandler(this.addClass_Click);
+            // 
+            // MainTeacherForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addClass);
+            this.Name = "MainTeacherForm";
             this.Text = "MainTeacherForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Button addClass;
     }
 }
