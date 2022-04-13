@@ -14,14 +14,16 @@ using System.Xml.Serialization;
 
 namespace RegasireaInformatiei
 {
-    public class Parse   {
-
+    public class Parse   
+    {
+        private static List<string> fileNames;
 
         static public void Main(String[] args)
         {
-
             List<string> xmlPaths = Directory.GetFiles("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\XML\\Reuters_34").ToList();
+            fileNames = xmlPaths.Select(a => Path.GetFileName(a)).ToList();
             List<XmlDocument> xmlDocuments = new List<XmlDocument>();
+            string PathFile = @"C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\Output.txt";
 
             foreach (string xmlPath in xmlPaths)
             {
@@ -35,19 +37,26 @@ namespace RegasireaInformatiei
             List<string> codes = new List<string>();
             List<string> acronimList = new List<string>();
             List<string> uniqueWords = new List<string>();
+            List<string> steamsTitles = new List<string>();
+            List<string> steamsTexts = new List<string>();
             List<string> steams = new List<string>();
-
             for (int i = 0; i < xmlDocuments.Count; i++)
             {
                 titles.Add(xmlDocuments[i].GetElementsByTagName("title")[0].InnerText);
                 texts.Add(xmlDocuments[i].GetElementsByTagName("text")[0].InnerText);
                 //codes.Add(xmlDocuments[i].SelectSingleNode("//codes[@class='bip:topics:1.0']"));
                 var code = xmlDocuments[i].SelectNodes("//codes[@class='bip:topics:1.0']//code/@code");
+                string codeNames = string.Empty;
                 foreach (XmlNode node in code)
                 {
+                    codeNames += (node.InnerText) + " ";
                     //Console.WriteLine(node.InnerText);
                 }
+                codes.Add(codeNames);
             }
+
+            titles = RemoveSymbols(titles);
+            texts = RemoveSymbols(texts);
             //Pentru afisarea unei liste care contine acronimele
             acronimList.AddRange(Acronime(titles));
             acronimList.AddRange(Acronime(texts));
@@ -72,39 +81,94 @@ namespace RegasireaInformatiei
             uniqueWords.AddRange(titles);
             uniqueWords.AddRange(texts);
 
-            steams.AddRange(GetStems(StopWords(titles)));
-            steams.AddRange(GetStems(StopWords(texts)));
-            
-            
-            GetUniqueWords(uniqueWords);
+
+            steamsTitles.AddRange(GetStems(StopWords(titles)));
+            steamsTexts.AddRange(GetStems(StopWords(texts)));
+
+            steams.AddRange(steamsTitles);
+            steams.AddRange(steamsTexts);
+
+            var words = GetUniqueWords(steams);
+
+           if(!File.Exists(PathFile))
+           {
+                using(StreamWriter sw  = File.CreateText(PathFile))
+                {
+                    foreach (var word in words)
+                    {
+                        sw.WriteLine("@Attribute " + word);
+                    }
+
+                    var uniqueWords2 = GetUniqueWords2(steamsTitles, steamsTexts, words);
 
 
-            List<string> output = GetUniqueWords(uniqueWords);
-            //for (int i = 0; i < output.Count; i++)
-            //{
-            //    Console.WriteLine(output[i]);
-            //}
+                    sw.WriteLine("\n" + "@Data : ");
+                    for (int i = 0; i < fileNames.Count; i++)
+                    {
+                        sw.Write("\n" + fileNames[i] + "  #  ");
+                        for (int j = 0; j < words.Count; j++)
+                        {
+                            var count = uniqueWords2[fileNames[i]].Find(c => c.Index == j);
+                            if (count != null)
+                            {
+                                sw.Write(j + ":" + count.Repetitions + "  ");                                
+                            }
+                        }
+                        sw.Write(" # " + codes[i]);
+                    }
+                }
+           }
 
-            // Stemmer
-           
-
-
+            Console.WriteLine("DONE");
 
             Console.ReadLine();
+        }
+
+        public static List<string> RemoveSymbols(List<string> texts)
+        {
+            List<char> chars = new List<char>() { '.', ',', '(', ')', '-', '"', ':' ,'*' };
+            for(int i = 0; i<texts.Count; i++)
+            {
+                foreach(var character in chars)
+                {
+                    texts[i] = texts[i].Replace(character, ' ');
+                }
+            }
+            return texts;
+        }
+
+        public static List<string> GetUniqueWords(List<string> texts)
+        {
+            List<string> words = new List<string>();
+
+            foreach (var text in texts)
+            {
+                var words2 = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                foreach (var word in words2)
+                {
+                    if (!words.Contains(word))
+                    {
+                        words.Add(word);
+                    }
+                }
+            }
+
+            return words;
         }
         
         private static List<string> GetStems(List<string> text)
         {
-            foreach (var line in text)
+            List<string> newText = new List<string>();
+            for(int i=0; i<text.Count; i++)
             {
-                var words = line.Split(' ').ToList();
+                var words = text[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 foreach(var word in words)
                 {
                     var x = new EnglishStemmer();
                     var stem = x.GetSteamWord(word);
                     if (!string.IsNullOrEmpty(stem))
                     {
-                        line.Replace(word, stem);
+                        text[i] = text[i].Replace(word, stem);
                     }
                 }
             }
@@ -122,11 +186,7 @@ namespace RegasireaInformatiei
             return acronime;
         }
 
-
-
-
-        
-
+             
         private static List<string> ReplaceAcronyms(List<string> text)
         {
             var x = new AcronymsDictionary("C:\\Coding\\RegasireaInformatiei\\RegasireaInformatiei\\acronime.txt");
@@ -161,7 +221,7 @@ namespace RegasireaInformatiei
         }
         private static List<string> FilterWords(string str)
         {
-            var split = str.Split(' ');
+            var split = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             var upper = split.Where(s=> String.Equals(s,s.ToUpper(),StringComparison.Ordinal)).ToList();
             Regex rgx = new Regex("[^a-zA-Z0-9 -]");
             upper = upper.Select(s => rgx.Replace(s, "")).ToList();
@@ -183,41 +243,55 @@ namespace RegasireaInformatiei
             }            
             return texts;
         }
-       
-        public static List<string> GetUniqueWords(List<string> text)
+
+        public static Dictionary<string, List<Cuvant>> GetUniqueWords2(List<string> titles, List<string> texts, List<string> words)
         {
-            Dictionary<string, List<Articol>> articole = new Dictionary<string, List<Articol>>();
-            var uniqueWords = new List<string>();    
-            
-            for(int i = 0; i < text.Count; i++)
+            Dictionary<string, List<Cuvant>> articole = new Dictionary<string, List<Cuvant>>();
+            var uniqueWords = new List<string>();
+
+            for (int i = 0; i < fileNames.Count; i++)
             {
-                var split = text[i].Split(' ');
-                foreach(string word in split)
+                var split = titles[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                split.AddRange(texts[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList());
+                List<Cuvant> cuvinte = new List<Cuvant>();
+
+                for(int j=0; j< words.Count(); j++)
                 {
-                    if (articole.ContainsKey(word))
+                    var count = split.Count(s => string.Equals(s, words[j]));
+                    if(count > 0)
                     {
-                        articole.TryGetValue(word, out List<Articol> articol);
-                        var x = articol.Where(a => a.Index == i);
-                        if (x.Any())
-                        {
-                            x.Count();
-                        }
-                        else
-                        {
-                            
-                        }
-                        articole[word].Add(new Articol(i, 0));
+                        cuvinte.Add(new Cuvant(j, count));
                     }
-                    else
-                    {
-                        articole.Add(word, new List<Articol>());
-                        articole[word].Add(new Articol(i, word));
-                    }
-                    if (text[i].Contains(word)) { uniqueWords.Add(word); break; }
                 }
+                articole.Add(fileNames[i], cuvinte);
+
+                //foreach (string word in split)
+                //{
+                //    if (articole.ContainsKey(fileNames[i]))
+                //    {
+                //        articole.TryGetValue(word, out List<Cuvant> articol);
+                //        var x = articol.Where(a => a.Index == i);
+                //        if (x.Any())
+                //        {
+                //            x.Count();
+                //        }
+                //        else
+                //        {
+
+                //        }
+                //        articole[word].Add(new Cuvant(i, 0));
+                //    }
+                //    else
+                //    {
+                //        articole.Add(word, new List<Cuvant>());
+                //        articole[word].Add(new Cuvant(i, 1));
+                //    }
+                //    if (text[i].Contains(word)) { uniqueWords.Add(word); break; }
+                //}
             }
-            return text;
-        }            
+            return articole;
+        }
+
 
     }
 }

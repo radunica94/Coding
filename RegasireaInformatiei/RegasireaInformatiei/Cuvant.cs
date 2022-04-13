@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RegasireaInformatiei
 {
-    public class Articol
+    public class Cuvant
     {
         private int repetitions;
-        public Articol(int index, int count)
+        public Cuvant(int index, int count)
         {
             Index = index;
             repetitions = count;

@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcronymsDictionary.cs" />
-    <Compile Include="Articol.cs" />
+    <Compile Include="Cuvant.cs" />
     <Compile Include="Parse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="acronime.txt" />
-    <Content Include="Output.txt" />
     <Content Include="Prescurtari.txt" />
     <Content Include="stopwordList.txt" />
     <Content Include="UniqueWords.txt" />
