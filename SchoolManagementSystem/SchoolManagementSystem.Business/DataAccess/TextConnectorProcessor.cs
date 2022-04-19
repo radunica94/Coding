@@ -40,6 +40,8 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             return output;
         }
+        
+       
 
         public static List<UsersModel> ConvertToUsersModels(this List<string> lines)
         {
@@ -104,7 +106,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 s.Semester = int.Parse(cols[3]);
 
                 string[] userIds = cols[4].Split('|');
-
+                
                 foreach (string userId in userIds)
                 {
                     s.Teachers.Add(users.Find(x => x.Id == int.Parse(userId)));
@@ -115,6 +117,30 @@ namespace SchoolManagementSystem.Business.DataAccess
             return output;
         }
 
+        public static List<ClassModel> ConvertToClassModels(this List<string> lines, string studentFileName)
+        {
+            List<ClassModel> output = new List<ClassModel>();
+            List<StudentsModel> students = studentFileName.FullFilePatch().LoadFile().ConvertToStudentModels();
+            foreach(string line in lines)
+            {
+                string[] cols = line.Split(',');
+                ClassModel c = new ClassModel();
+                c.Id = int.Parse(cols[0]);
+                c.ClassName = cols[1];
+                c.ClassCapacity = int.Parse(cols[2]);
+
+                string[] studentIds = cols[3].Split('|');
+                foreach(string studentId in studentIds)
+                {
+                    c.StudentsList.Add(students.Find(x => x.Id == int.Parse(studentId)));
+                }
+
+                output.Add(c);
+            }
+            return output;
+
+        }
+
         public static void SaveToSubjectFile(this List<SubjectModel> subjects, string fileName)
         {
             List<string> lines = new List<string>();
@@ -122,6 +148,17 @@ namespace SchoolManagementSystem.Business.DataAccess
             {
                 lines.Add($"{s.Id},{s.SubjectName},{s.Year},{s.Semester},{ConvertSubjectListToString(s.Teachers)}");
             }
+            File.WriteAllLines(fileName.FullFilePatch(), lines);
+        }
+        
+        public static void SaveToClassFile(this List<ClassModel> classes, string fileName)
+        {
+            List<string> lines = new List<string>();
+            foreach (ClassModel c in classes)
+            {
+                lines.Add($"{c.Id},{c.ClassName},{c.ClassCapacity},{ConvertClassListToString(c.StudentsList)}");
+            }
+            
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
 
@@ -139,6 +176,22 @@ namespace SchoolManagementSystem.Business.DataAccess
             output = output.Substring(0, output.Length - 1);
             return output;
         }
+
+        private static string ConvertClassListToString(List<StudentsModel> students)
+        {
+            string output = "";
+            if (students.Count == 0)
+            {
+                return "";
+            }
+            foreach (StudentsModel s in students)
+            {
+                output += $"{s.Id}|";
+            }
+            output = output.Substring(0, output.Length - 1);
+            return output;
+        }
+       
         
         public static void SaveToStudentsFile(this List<StudentsModel> models, string fileName)
         {
@@ -162,5 +215,104 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
+
+        public static List<GradeModel> ConvertToGradeModels(this List<string> lines , string studentFileName, string subjectFileName)
+        {
+            List<GradeModel> output = new List<GradeModel>();
+            List<StudentsModel> students = studentFileName.FullFilePatch().LoadFile().ConvertToStudentsModels(studentFileName);
+            List<SubjectModel> subjects = subjectFileName.FullFilePatch().LoadFile().ConvertToSubjectModels(subjectFileName);
+
+            foreach(string line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                GradeModel gm = new GradeModel();
+
+                gm.Id = int.Parse(cols[0]);
+                gm.Grade = int.Parse(cols[1]);
+
+                string[] studentIds = cols[2].Split('|');
+                foreach (string id in studentIds)
+                {
+                    gm.Students.Add(students.Where(x => x.Id == int.Parse(id)).First());
+                }
+
+                string[] subjectIds = cols[3].Split('|');
+                foreach (string id in subjectIds)
+                {
+                    gm.Subjects.Add(subjects.Where(x => x.Id == int.Parse(id)).First());
+                }
+
+                output.Add(gm);
+            }
+            return output;
+        }
+
+        public static List<StudentsModel> ConvertToStudentsModels(this List<string> lines,string studentFileName)
+        {
+            List<GradeModel> output = new List<GradeModel>();
+            List<StudentsModel> students = studentFileName.FullFilePatch().LoadFile().ConvertToStudentModels();
+            
+            foreach(string line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                GradeModel gm = new GradeModel();
+                gm.Id = int.Parse(cols[0]);
+                gm.Grade = int.Parse(cols[1]);
+
+                string[] studentIds = cols[2].Split('|');
+                foreach (string id in studentIds)
+                {
+                    gm.Students.Add(students.Where(x => x.Id == int.Parse(id)).First());
+                }
+
+                output.Add(gm);
+            }
+
+            return output;
+        }
+
+
+        public static void SaveToGradeFile(this List<GradeModel> models, string fileName)
+        {
+            List<string> lines = new List<string>();
+
+            foreach (GradeModel g in models)
+            {
+                lines.Add($"{ g.Id },{ g.Grade },{ ConvertStudentListToString(g.Students) },{ ConvertSubjectsListToString(g.Subjects) }");
+            }
+            File.WriteAllLines(fileName.FullFilePatch(), lines);
+        }
+
+        private static string ConvertStudentListToString(List<StudentsModel> students)
+        {
+            string output = "";
+            if (students.Count == 0)
+            {
+                return "";
+            }
+            foreach (StudentsModel s in students)
+            {
+                output += $"{s.Id}|";
+            }
+            output = output.Substring(0, output.Length - 1);
+            return output;
+        }
+
+        private static string ConvertSubjectsListToString(List<SubjectModel> subjects)
+        {
+            string output = "";
+            if (subjects.Count == 0)
+            {
+                return "";
+            }
+            foreach (SubjectModel s in subjects)
+            {
+                output += $"{s.Id}|";
+            }
+            output = output.Substring(0, output.Length - 1);
+            return output;
+        } 
     }
 }

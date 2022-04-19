@@ -7,6 +7,12 @@ namespace SchoolManagementSystem.Business.DataAccess
     public class SqlConnector : IDataConnection
     {
         private const string db = "SchoolManagementSystem";
+
+        public void AddGrade(GradeModel grade)
+        {
+            throw new NotImplementedException();
+        }
+
         public StudentsModel AddStudents(StudentsModel students)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
@@ -55,6 +61,32 @@ namespace SchoolManagementSystem.Business.DataAccess
                 users.Id = p.Get<int>("@id");
 
                 return users;
+            }
+        }
+
+        public ClassModel CreateClass(ClassModel classes)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@ClassName", classes.ClassName);
+                p.Add("@ClassCapacity", classes.ClassCapacity);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spClass_Insert", p, commandType: CommandType.StoredProcedure);
+
+                classes.Id = p.Get<int>("@id");
+
+                foreach (StudentsModel sm in classes.StudentsList)
+                {
+                    p = new DynamicParameters();
+                    p.Add("@ClassId", classes.Id);
+                    p.Add("@StudentId", sm.Id);
+
+                    connection.Execute("dbo.spCreateClass_Insert", p, commandType: CommandType.StoredProcedure);
+                }
+
+                return classes;
             }
         }
 
@@ -111,6 +143,16 @@ namespace SchoolManagementSystem.Business.DataAccess
                 students = connection.Query<StudentsModel>("dbo.spStudents_GetStudents").ToList();
             }
             return students;
+        }
+
+        public List<SubjectModel> GetAllSubjects()
+        {
+            List<SubjectModel> subject;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                subject = connection.Query<SubjectModel>("dbo.spSubject_GetSubjects").ToList();
+            }
+            return subject;
         }
 
         public List<UsersModel> LoginAsAdmin()

@@ -22,5 +22,17 @@ namespace SchoolManagementSystem.Presentation
             AddClassForm addClass = new AddClassForm();
             addClass.Show();
         }
+
+        private void addGradeButton_Click(object sender, EventArgs e)
+        {
+            AddGradeForm addGrade = new AddGradeForm();
+            addGrade.Show();
+        }
+
+        private void addSubjectButton_Click(object sender, EventArgs e)
+        {
+            AddSubjectForm addSubject = new AddSubjectForm();
+            addSubject.Show();
+        }
     }
 }

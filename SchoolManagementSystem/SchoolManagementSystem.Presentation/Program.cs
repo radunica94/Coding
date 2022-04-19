@@ -19,10 +19,10 @@ namespace SchoolManagementSystem.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
-            SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.Sql);
+            SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+            //SchoolManagementSystem.Business.GlobalConfig.InitializeConnections(DatabaseType.Sql);
 
-            Application.Run(new AddSubjectForm());
+            Application.Run(new MainTeacherForm());
         }
     }
 }

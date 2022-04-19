@@ -7,6 +7,23 @@ namespace SchoolManagementSystem.Business.DataAccess
         private const string StudentTxt = "Student.txt";
         private const string UserTxt = "User.txt";
         private const string SubjectTxt = "Subject.txt";
+        private const string ClassTxt = "Class.txt";
+        private const string GradeTxt = "Grade.txt";
+
+        public void AddGrade(GradeModel grade)
+        {
+            List<GradeModel> grades = GradeTxt.FullFilePatch().LoadFile().ConvertToGradeModels(StudentTxt, SubjectTxt);
+
+            int currentId = 1;
+            if (grades.Count > 0)
+            {
+                currentId = grades.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            grade.Id = currentId;
+            grades.Add(grade);
+            grades.SaveToGradeFile(GradeTxt);
+        }
+
         public StudentsModel AddStudents(StudentsModel students)
         {
             List<StudentsModel> std = StudentTxt.FullFilePatch().LoadFile().ConvertToStudentModels();
@@ -39,6 +56,24 @@ namespace SchoolManagementSystem.Business.DataAccess
             return users;
         }
 
+        public ClassModel CreateClass(ClassModel classes)
+        {
+            List<ClassModel> cls = ClassTxt.FullFilePatch().LoadFile().ConvertToClassModels(StudentTxt);
+
+            int currentId = 1;
+            if (cls.Count > 0)
+            {
+                currentId = cls.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            classes.Id = currentId;
+            cls.Add(classes);
+            cls.SaveToClassFile(ClassTxt);
+
+            return classes;
+        }
+        
+
+
         public SubjectModel CreateSubject(SubjectModel subject)
         {
             List<SubjectModel> subj = SubjectTxt.FullFilePatch().LoadFile().ConvertToSubjectModels(UserTxt);
@@ -51,6 +86,7 @@ namespace SchoolManagementSystem.Business.DataAccess
             subject.Id = currentId;
             subj.Add(subject);
             subj.SaveToSubjectFile(SubjectTxt);
+            
             return subject;
         }
 
@@ -64,7 +100,12 @@ namespace SchoolManagementSystem.Business.DataAccess
 
         public List<StudentsModel> GetAllStudents()
         {
-            throw new NotImplementedException();
+            return StudentTxt.FullFilePatch().LoadFile().ConvertToStudentModels();
+        }
+
+        public List<SubjectModel> GetAllSubjects()
+        {
+            return SubjectTxt.FullFilePatch().LoadFile().ConvertToSubjectModels(UserTxt);
         }
 
         public List<UsersModel> LoginAsAdmin()

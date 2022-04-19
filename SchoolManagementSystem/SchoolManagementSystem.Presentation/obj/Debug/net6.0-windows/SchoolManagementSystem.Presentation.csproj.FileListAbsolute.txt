@@ -37,3 +37,4 @@ C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\n
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.MainTeacherForm.resources
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddClassForm.resources
 C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddSubjectForm.resources
+C:\Coding\SchoolManagementSystem\SchoolManagementSystem.Presentation\obj\Debug\net6.0-windows\SchoolManagementSystem.Presentation.AddGradeForm.resources
