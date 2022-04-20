@@ -16,6 +16,9 @@ namespace Calculator.UI
         DivisionMethod div = new DivisionMethod();
         MultiplyMethod mul = new MultiplyMethod();
         SubtractMethod sub = new SubtractMethod();
+        FactorialMethod factorial = new FactorialMethod();
+        PowMethod powM = new PowMethod();
+        SqrtMethod sqrt = new SqrtMethod();        
 
         private void changeLabel(int numPressed)
         {
@@ -165,7 +168,7 @@ namespace Calculator.UI
             num2 = 2;
             if (num1 > 0)
             {
-                double pow = Math.Pow(num1, num2);
+                double pow = powM.Pow2(num1);
                 displayLabel.Text = pow.ToString();
             }
             else if(num1 == 0)
@@ -180,19 +183,8 @@ namespace Calculator.UI
             num1 = float.Parse(displayLabel.Text);
             result = 1 / num1;
             displayLabel.Text = result.ToString();
-        }
-
-        private void percentButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CEButton_Click(object sender, EventArgs e)
-        {
-            // TODO - sa afiseze toate operatia sa stearga doar ultimul numar
-            // TODO - replace img with Text in UI
-            // TODO - dropdown list for other operations
-        }
+        }       
+       
 
         private void backSpaceButton_Click(object sender, EventArgs e)
         {
@@ -207,7 +199,39 @@ namespace Calculator.UI
             }
         }
 
-        
+        private void factButton_Click(object sender, EventArgs e)
+        {
+            num1 = float.Parse(displayLabel.Text);
+            if (num1 > 0)
+            {
+                double fact = factorial.Factorial(num1);
+                displayLabel.Text = fact.ToString();
+            }
+        }
+
+        private void xpowYButton_Click(object sender, EventArgs e)
+        {
+            num1 = double.Parse(displayLabel.Text);
+            operation = '^';
+            
+            displayLabel.Text = "";
+        }
+
+        private void xpow3Button_Click(object sender, EventArgs e)
+        {
+            num1 = float.Parse(displayLabel.Text);
+            num2 = 3;
+            if (num1 > 0)
+            {
+                double pow = powM.Pow3(num1);
+                displayLabel.Text = pow.ToString();
+            }
+            else if (num1 == 0)
+            {
+                double pow = 0;
+                displayLabel.Text = pow.ToString();
+            }
+        }
 
         private void CButton_Click(object sender, EventArgs e)
         {
@@ -241,6 +265,10 @@ namespace Calculator.UI
                     case '*':
                         num2 = double.Parse(displayLabel.Text);
                         result = mul.Multiply(num1, num2);
+                        break;
+                    case '^':
+                        num2 = double.Parse(displayLabel.Text);
+                        result = powM.Pow(num1, num2);
                         break;
                     default:
                         break;
