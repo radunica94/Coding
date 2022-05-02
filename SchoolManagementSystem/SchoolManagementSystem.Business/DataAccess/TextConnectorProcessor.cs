@@ -40,8 +40,8 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             return output;
         }
-        
-       
+
+
 
         public static List<UsersModel> ConvertToUsersModels(this List<string> lines)
         {
@@ -57,13 +57,13 @@ namespace SchoolManagementSystem.Business.DataAccess
                 u.FirstName = cols[3];
                 u.LastName = cols[4];
                 u.Email = cols[5];
-                u.Phone = cols[6];               
+                u.Phone = cols[6];
                 u.Role = cols[7];
                 u.Birthday = Convert.ToDateTime(cols[8]);
                 u.Street = cols[9];
                 u.Apartment = cols[10];
                 u.City = cols[11];
-                u.Country = cols[12];                
+                u.Country = cols[12];
                 u.ZipCode = cols[13];
 
                 output.Add(u);
@@ -71,31 +71,13 @@ namespace SchoolManagementSystem.Business.DataAccess
             return output;
         }
 
-
-        private static string ConvertStudentsToString(List<StudentsModel> students)
-        {
-            string output = "";
-
-            if (students.Count == 0)
-            {
-                return "";
-            }
-
-            foreach (StudentsModel s in students)
-            {
-                output += $"{ s.Id }|";
-            }
-
-            output = output.Substring(0, output.Length - 1);
-
-            return output;
-        }
+        
 
         public static List<SubjectModel> ConvertToSubjectModels(this List<string> lines, string userFileName)
         {
             List<SubjectModel> output = new List<SubjectModel>();
             List<UsersModel> users = userFileName.FullFilePatch().LoadFile().ConvertToUsersModels();
-            foreach(string line in lines)
+            foreach (string line in lines)
             {
                 string[] cols = line.Split(',');
 
@@ -106,7 +88,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 s.Semester = int.Parse(cols[3]);
 
                 string[] userIds = cols[4].Split('|');
-                
+
                 foreach (string userId in userIds)
                 {
                     s.Teachers.Add(users.Find(x => x.Id == int.Parse(userId)));
@@ -121,7 +103,7 @@ namespace SchoolManagementSystem.Business.DataAccess
         {
             List<ClassModel> output = new List<ClassModel>();
             List<StudentsModel> students = studentFileName.FullFilePatch().LoadFile().ConvertToStudentModels();
-            foreach(string line in lines)
+            foreach (string line in lines)
             {
                 string[] cols = line.Split(',');
                 ClassModel c = new ClassModel();
@@ -130,7 +112,7 @@ namespace SchoolManagementSystem.Business.DataAccess
                 c.ClassCapacity = int.Parse(cols[2]);
 
                 string[] studentIds = cols[3].Split('|');
-                foreach(string studentId in studentIds)
+                foreach (string studentId in studentIds)
                 {
                     c.StudentsList.Add(students.Find(x => x.Id == int.Parse(studentId)));
                 }
@@ -150,7 +132,7 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
-        
+
         public static void SaveToClassFile(this List<ClassModel> classes, string fileName)
         {
             List<string> lines = new List<string>();
@@ -158,7 +140,7 @@ namespace SchoolManagementSystem.Business.DataAccess
             {
                 lines.Add($"{c.Id},{c.ClassName},{c.ClassCapacity},{ConvertClassListToString(c.StudentsList)}");
             }
-            
+
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
 
@@ -191,8 +173,8 @@ namespace SchoolManagementSystem.Business.DataAccess
             output = output.Substring(0, output.Length - 1);
             return output;
         }
-       
-        
+
+
         public static void SaveToStudentsFile(this List<StudentsModel> models, string fileName)
         {
             List<string> lines = new List<string>();
@@ -203,7 +185,7 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
-        
+
         public static void SaveToUsersFile(this List<UsersModel> models, string fileName)
         {
             List<string> lines = new List<string>();
@@ -215,14 +197,15 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             File.WriteAllLines(fileName.FullFilePatch(), lines);
         }
+                
 
-        public static List<GradeModel> ConvertToGradeModels(this List<string> lines , string studentFileName, string subjectFileName)
+        public static List<GradeModel> ConvertToGradeModels(this List<string> lines, string studentFileName, string subjectFileName)
         {
             List<GradeModel> output = new List<GradeModel>();
             List<StudentsModel> students = studentFileName.FullFilePatch().LoadFile().ConvertToStudentsModels(studentFileName);
             List<SubjectModel> subjects = subjectFileName.FullFilePatch().LoadFile().ConvertToSubjectModels(subjectFileName);
 
-            foreach(string line in lines)
+            foreach (string line in lines)
             {
                 string[] cols = line.Split(',');
 
@@ -248,12 +231,12 @@ namespace SchoolManagementSystem.Business.DataAccess
             return output;
         }
 
-        public static List<StudentsModel> ConvertToStudentsModels(this List<string> lines,string studentFileName)
+        public static List<StudentsModel> ConvertToStudentsModels(this List<string> lines, string studentFileName)
         {
             List<GradeModel> output = new List<GradeModel>();
             List<StudentsModel> students = studentFileName.FullFilePatch().LoadFile().ConvertToStudentModels();
-            
-            foreach(string line in lines)
+
+            foreach (string line in lines)
             {
                 string[] cols = line.Split(',');
 
@@ -272,7 +255,6 @@ namespace SchoolManagementSystem.Business.DataAccess
 
             return output;
         }
-
 
         public static void SaveToGradeFile(this List<GradeModel> models, string fileName)
         {
@@ -294,7 +276,7 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             foreach (StudentsModel s in students)
             {
-                output += $"{s.Id}|";
+                output += $"{s.FullName}|";
             }
             output = output.Substring(0, output.Length - 1);
             return output;
@@ -309,10 +291,10 @@ namespace SchoolManagementSystem.Business.DataAccess
             }
             foreach (SubjectModel s in subjects)
             {
-                output += $"{s.Id}|";
+                output += $"{s.SubjectName}|";
             }
             output = output.Substring(0, output.Length - 1);
             return output;
-        } 
+        }
     }
 }
