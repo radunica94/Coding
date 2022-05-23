@@ -8,25 +8,25 @@ namespace RegasireaInformatiei
 {
     public class Cuvant
     {
-        private int repetitions;
-        public Cuvant(int index, int count)
+        public Cuvant(int index, double count)
         {
             Index = index;
-            repetitions = count;
+            Repetitions = count;
         }
 
         public int Index { get; }
-        public int Repetitions 
-        { 
-            get
-            {
-                return repetitions;
-            }
+        public double Repetitions { get; set; }
+    }
+
+    public class Euclidian
+    {
+        public Euclidian(string name, double sum)
+        {
+            Name = name;
+            Sum = sum;
         }
 
-        public void Count(int repetitions)
-        {
-            repetitions++;
-        }
+        public string Name { get; }
+        public double Sum { get; }
     }
 }
